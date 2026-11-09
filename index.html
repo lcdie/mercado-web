@@ -2,189 +2,1028 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="theme-color" content="#0f4c81">
-  <title>Mercado Inmobiliario Digital — Diez de Octubre</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none';">
+  <meta name="description" content="Explicación sencilla e interactiva del mercado inmobiliario digital en Diez de Octubre: 122 anuncios verificados de Revolico y Facebook, precios en dólares, barrios, opacidad y límites del estudio.">
+  <meta name="theme-color" content="#0b3d5c">
+  <meta name="color-scheme" content="light">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Mercado inmobiliario digital en Diez de Octubre">
+  <meta property="og:description" content="122 anuncios reales explicados con 5 gráficas interactivas: precios, barrios, dolarización y opacidad.">
+  <meta property="og:image" content="https://lcdie.github.io/mercado-web/img/grafico_2_oferta_por_zona.png">
+  <meta property="og:url" content="https://lcdie.github.io/mercado-web/">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Mercado inmobiliario digital en Diez de Octubre | 122 anuncios explicados</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <div class="reading-progress" id="readingProgress" aria-hidden="true"></div>
 
-  <!-- Barra superior fija (móvil) -->
-  <nav class="navbar">
-    <div class="navbar-brand">🏠 10 de Octubre</div>
-    <a href="#graficas" class="navbar-btn">Gráficas</a>
-  </nav>
+  <header class="site-header" id="top">
+    <div class="header-inner">
+      <a class="brand" href="#top" aria-label="Ir al inicio">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="28" height="28" role="img" aria-hidden="true">
+            <path d="M4 15.5 16 5l12 10.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M7.5 14.5V27h17V14.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/>
+            <path d="M13 27v-7h6v7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span class="brand-text">Mercado <strong>10 de Octubre</strong></span>
+      </a>
 
-  <!-- Header -->
-  <header class="hero">
-    <div class="hero-content">
-      <h1>Mercado Inmobiliario Digital<br>en Diez de Octubre</h1>
-      <p class="subtitle">Universidad de La Habana (MATCOM)<br>
-      122 publicaciones verificadas · 30 preguntas · Datos reales</p>
-      <a href="#graficas" class="btn btn-primary">Ver las gráficas interactivas ➜</a>
-      <div class="share-mobile" id="share-mobile">
-        <button id="btn-share" class="share-btn">Compartir en WhatsApp</button>
-      </div>
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainNav">
+        <span class="menu-lines" aria-hidden="true"></span>
+        <span class="sr-only">Abrir menú</span>
+      </button>
+
+      <nav class="main-nav" id="mainNav" aria-label="Secciones del sitio">
+        <a href="#resumen">Resumen</a>
+        <a href="#graficas">Gráficas</a>
+        <a href="#metodo">Método</a>
+        <a href="#evidencia">Evidencia</a>
+        <a href="#limites">Límites</a>
+        <button class="share-link" id="shareTop" type="button">
+          <span aria-hidden="true">↗</span> Compartir
+        </button>
+      </nav>
     </div>
   </header>
 
-  <!-- Botón volver arriba (móvil) -->
-  <button id="btn-top" class="btn-top">↑</button>
+  <main id="contenido">
+    <!-- ================= HERO ================= -->
+    <section class="hero" aria-labelledby="heroTitle">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">Ciencia de Datos · MATCOM · Universidad de La Habana</p>
+          <h1 id="heroTitle">Mercado inmobiliario digital en <span>Diez de Octubre</span></h1>
+          <p class="hero-lead">
+            ¿Cuánto cuesta comprar? ¿Dónde se publica la oferta? ¿Cuánta información falta?
+            Una lectura sencilla de <strong>122 anuncios reales</strong> de Revolico y Facebook,
+            con gráficas que puedes mover, ampliar y explorar.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#graficas">Explorar las gráficas <span aria-hidden="true">↓</span></a>
+            <a class="btn btn-ghost" href="https://github.com/lcdie/Mercado-digital-cubano-en-10-de-octubre/blob/main/analisis/informe_final.pdf" target="_blank" rel="noopener">Leer el informe (PDF)</a>
+          </div>
+          <ul class="hero-chips" aria-label="Datos principales del proyecto">
+            <li><strong>122</strong> publicaciones verificadas</li>
+            <li><strong>5</strong> gráficas interactivas</li>
+            <li><strong>30</strong> preguntas respondidas</li>
+          </ul>
+        </div>
 
-  <!-- Introducción -->
-  <section id="inicio" class="intro">
-    <div class="container">
-      <h2>¿De qué trata este proyecto?</h2>
-      <p>Estudiantes analizaron <strong>anuncios de venta y alquiler</strong> publicados en <strong>Revolico y Facebook</strong> del municipio Diez de Octubre, La Habana.</p>
-      <p>Revisaron cada anuncio para confirmar que realmente estaba en el municipio, y respondieron <strong>30 preguntas</strong> sobre precios, zonas, dólares, alquileres y falta de información.</p>
+        <div class="hero-panel reveal" data-delay="0.15s" aria-label="Resumen visual del mercado">
+          <div class="hero-panel-head">
+            <span class="dot" aria-hidden="true"></span>
+            <span>Diez de Octubre · La Habana</span>
+            <span class="panel-tag">2026</span>
+          </div>
+          <div class="hero-metric">
+            <span class="metric-label">Mediana de venta</span>
+            <strong class="metric-value">$21,000 <small>USD</small></strong>
+            <span class="metric-note">La mitad de las ventas se publica por debajo de este precio · n = 42</span>
+          </div>
+          <div class="mini-bars" aria-hidden="true">
+            <span style="--h: 42%"></span><span style="--h: 68%"></span><span style="--h: 54%"></span>
+            <span style="--h: 86%"></span><span style="--h: 63%"></span><span style="--h: 100%"></span>
+            <span style="--h: 48%"></span><span style="--h: 74%"></span>
+          </div>
+          <div class="hero-panel-foot">
+            <span><strong>86.9%</strong> de los precios están en USD</span>
+            <span><strong>67.2%</strong> permite cruzar precio y zona</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-wave" aria-hidden="true"></div>
+    </section>
 
-      <div class="numeros">
-        <div class="numero-card">
-          <span class="gran">122</span>
-          <span class="pequeno">publicaciones confirmadas dentro del municipio</span>
+    <!-- ================= RESUMEN ================= -->
+    <section class="section" id="resumen" aria-labelledby="resumenTitle">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="kicker">El proyecto en 1 minuto</p>
+          <h2 id="resumenTitle">Qué se estudió y por qué importa</h2>
+          <p class="section-lead">
+            El acceso a la vivienda en La Habana no depende solo del precio. También depende de
+            <strong>qué información está publicada</strong>, <strong>en qué moneda</strong> y
+            <strong>en qué barrio</strong>. Este proyecto mide esas cuatro dimensiones con anuncios
+            reales de Diez de Octubre.
+          </p>
         </div>
-        <div class="numero-card">
-          <span class="gran">86.9%</span>
-          <span class="pequeno">de los precios se declaran en dólares (USD)</span>
+
+        <div class="stat-grid">
+          <article class="stat-card reveal" data-delay="0.05s">
+            <span class="stat-icon" aria-hidden="true">🏠</span>
+            <strong class="stat-number" data-counter data-target="122" data-decimals="0">0</strong>
+            <span class="stat-label">publicaciones confirmadas dentro del municipio</span>
+            <span class="stat-source">83 de Revolico + 39 de Facebook</span>
+          </article>
+          <article class="stat-card reveal" data-delay="0.1s">
+            <span class="stat-icon" aria-hidden="true">💵</span>
+            <strong class="stat-number" data-counter data-target="86.9" data-decimals="1" data-suffix="%">0%</strong>
+            <span class="stat-label">de los precios publicados están en dólares (USD)</span>
+            <span class="stat-source">106 de 122; 99.1% entre quienes declaran moneda</span>
+          </article>
+          <article class="stat-card reveal" data-delay="0.15s">
+            <span class="stat-icon" aria-hidden="true">📉</span>
+            <strong class="stat-number" data-counter data-target="21000" data-prefix="$" data-decimals="0">$0</strong>
+            <span class="stat-label">es la mediana del precio de compra en USD</span>
+            <span class="stat-source">La media es mayor: $26,357.14 · n = 42 ventas</span>
+          </article>
+          <article class="stat-card reveal" data-delay="0.2s">
+            <span class="stat-icon" aria-hidden="true">🔎</span>
+            <strong class="stat-number" data-counter data-target="67.2" data-decimals="1" data-suffix="%">0%</strong>
+            <span class="stat-label">de los anuncios permiten saber precio y zona a la vez</span>
+            <span class="stat-source">82 de 122; 4.9% no dice ninguno de los dos</span>
+          </article>
         </div>
-        <div class="numero-card">
-          <span class="gran">$21,000</span>
-          <span class="pequeno">mediana de precio de compra (USD)</span>
+
+        <div class="funnel-card reveal">
+          <div class="funnel-copy">
+            <p class="kicker">Cómo se llegó a 122</p>
+            <h3>De 176 publicaciones unificadas a 122 confirmadas</h3>
+            <p>
+              El scraper etiquetaba 134 anuncios de Revolico como «Diez de Octubre», pero esa
+              etiqueta no era fiable. Se revisó cada título y se comprobó la ubicación contra el
+              polígono del municipio. Así se excluyeron los anuncios de otros municipios y los que
+              no se podían verificar.
+            </p>
+          </div>
+          <div class="funnel" aria-label="Embudo de verificación municipal">
+            <div class="funnel-step funnel-start">
+              <strong>176</strong>
+              <span>publicaciones unificadas</span>
+            </div>
+            <div class="funnel-minus">
+              <span><strong>−46</strong> de otro municipio</span>
+              <span><strong>−8</strong> indeterminadas</span>
+              <span><strong>−1</strong> fuera del universo</span>
+            </div>
+            <div class="funnel-step funnel-end">
+              <strong>122</strong>
+              <span>confirmadas dentro del municipio</span>
+            </div>
+          </div>
         </div>
-        <div class="numero-card">
-          <span class="gran">55</span>
-          <span class="pequeno">anuncios descartados con motivo registrado</span>
+
+        <details class="note-details reveal">
+          <summary>¿Qué pasó con los 55 registros descartados?</summary>
+          <p>
+            No se borraron. Se conservan íntegros, con su motivo, en
+            <a href="https://github.com/lcdie/Mercado-digital-cubano-en-10-de-octubre/blob/main/datos/limpios/descartados_diez_octubre.json" target="_blank" rel="noopener">descartados_diez_octubre.json</a>:
+            46 con resultado <strong>NO</strong> (otro municipio), 8 <strong>INDETERMINADOS</strong>
+            y 1 que ya estaba fuera de la base unificada. Conservarlos permite auditar el cambio de universo.
+          </p>
+        </details>
+      </div>
+    </section>
+
+    <!-- ================= GRÁFICAS ================= -->
+    <section class="section section-graphs" id="graficas" aria-labelledby="graficasTitle">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="kicker">Las 5 gráficas del proyecto</p>
+          <h2 id="graficasTitle">Toca, arrastra y amplía los datos</h2>
+          <p class="section-lead">
+            Cada tarjeta tiene dos vistas: una <strong>gráfica interactiva</strong> y la
+            <strong>imagen original del repositorio</strong>. En la interactiva puedes pasar el mouse
+            para ver los valores, arrastrar para mover y usar la rueda o pellizcar para acercar.
+            Debajo de cada una hay una explicación en lenguaje sencillo.
+          </p>
         </div>
+
+        <!-- ---------- GRÁFICA 1 ---------- -->
+        <article class="graph-card reveal" id="grafica-1" aria-labelledby="g1-title">
+          <header class="graph-head">
+            <span class="graph-number" aria-hidden="true">1</span>
+            <div class="graph-heading">
+              <h3 id="g1-title">Precios de venta en dólares</h3>
+              <p>Cómo se reparten los precios que piden los vendedores.</p>
+            </div>
+            <span class="n-chip" title="Ventas explícitas con precio en USD">n = 42</span>
+          </header>
+
+          <div class="graph-toolbar">
+            <div class="tab-switch" role="tablist" aria-label="Vista de la gráfica 1">
+              <button class="tab-btn is-active" id="tab-g1-int" role="tab" aria-selected="true" aria-controls="panel-g1-int" data-tab="g1-int" type="button">Interactiva</button>
+              <button class="tab-btn" id="tab-g1-orig" role="tab" aria-selected="false" aria-controls="panel-g1-orig" data-tab="g1-orig" type="button">Original del repo</button>
+            </div>
+            <div class="control-group" aria-label="Opciones de la gráfica 1">
+              <button class="chip-btn is-active" data-g1-mode="all" type="button" aria-pressed="true">Ver todo</button>
+              <button class="chip-btn" data-g1-mode="p10p90" type="button" aria-pressed="false">Zoom P10–P90</button>
+              <button class="icon-btn" data-reset="chart1" type="button" title="Restablecer zoom" aria-label="Restablecer zoom de la gráfica 1">↺</button>
+            </div>
+          </div>
+
+          <div class="tab-panel is-active" id="panel-g1-int" role="tabpanel" aria-labelledby="tab-g1-int" data-panel="g1-int">
+            <div class="chart-wrap chart-wrap-bar">
+              <canvas id="chart1" role="img" aria-label="Histograma de 42 precios de venta en USD. La mayoría se concentra entre 6,100 y 60,000 dólares; la mediana es 21,000 y la media 26,357."></canvas>
+              <p class="chart-hint">Arrastra para mover · rueda o pellizco para zoom · doble clic para restablecer</p>
+            </div>
+          </div>
+
+          <div class="tab-panel" id="panel-g1-orig" role="tabpanel" aria-labelledby="tab-g1-orig" data-panel="g1-orig" hidden>
+            <figure class="original-figure">
+              <img class="zoomable" src="img/grafico_1_precios_venta_usd.png" alt="Gráfica original del repositorio: histograma de precios de venta en USD con media y mediana." loading="lazy" decoding="async" data-title="Gráfica 1 original: precios de venta en USD" data-caption="Imagen generada por graficos/generar_graficas.py. Haz clic para ampliar y arrastrar.">
+              <figcaption>
+                Imagen original del repositorio. El script de gráficas usa los campos crudos de operación;
+                por eso muestra n = 43, mientras el informe final usa n = 42 tras la clasificación textual.
+                <a href="#nota-graficas">Ver nota técnica</a>.
+              </figcaption>
+            </figure>
+          </div>
+
+          <div class="explain-grid">
+            <div class="explain-block">
+              <h4><span aria-hidden="true">👀</span> ¿Qué muestra?</h4>
+              <p>Cada barra cuenta cuántas ventas se publican en un rango de precio. El eje horizontal es el precio en dólares y el vertical, la cantidad de anuncios.</p>
+            </div>
+            <div class="explain-block">
+              <h4><span aria-hidden="true">💡</span> ¿Qué significa?</h4>
+              <p>La mitad de las ventas se pide por debajo de <strong>$21,000</strong>. El 80% central está entre <strong>$6,100 y $60,000</strong>. La media sube a <strong>$26,357</strong> porque unas pocas propiedades muy caras empujan el promedio hacia arriba.</p>
+            </div>
+            <div class="explain-block explain-key">
+              <h4><span aria-hidden="true">⭐</span> Dato clave</h4>
+              <p><strong>La mediana es más útil que la media</strong> para saber «cuánto cuesta lo típico». Si ves un promedio alto, pregúntate si hay valores extremos.</p>
+            </div>
+            <div class="explain-block">
+              <h4><span aria-hidden="true">🖐️</span> Cómo explorar</h4>
+              <p>Pasa el mouse por las barras para ver el rango y la cantidad. Usa «Zoom P10–P90» para quedarte con el 80% central. En móvil, pellizca para acercar.</p>
+            </div>
+          </div>
+
+          <div class="graph-footer">
+            <p><strong>Fuente:</strong> informe final, pregunta A2. 42 ventas explícitas con precio en USD. Mínimo $2,500; máximo $70,000; IC95% de la mediana: $15,000–$25,000.</p>
+            <details class="data-table">
+              <summary>Ver datos en tabla</summary>
+              <div class="table-wrap">
+                <table>
+                  <caption>Distribución de los 42 precios de venta en USD (15 intervalos)</caption>
+                  <thead><tr><th scope="col">Rango (USD)</th><th scope="col">Anuncios</th></tr></thead>
+                  <tbody>
+                    <tr><td>2,500 – 7,000</td><td>5</td></tr>
+                    <tr><td>7,000 – 11,500</td><td>3</td></tr>
+                    <tr><td>11,500 – 16,000</td><td>8</td></tr>
+                    <tr><td>16,000 – 20,500</td><td>5</td></tr>
+                    <tr><td>20,500 – 25,000</td><td>4</td></tr>
+                    <tr><td>25,000 – 29,500</td><td>4</td></tr>
+                    <tr><td>29,500 – 34,000</td><td>4</td></tr>
+                    <tr><td>34,000 – 38,500</td><td>1</td></tr>
+                    <tr><td>38,500 – 43,000</td><td>0</td></tr>
+                    <tr><td>43,000 – 47,500</td><td>1</td></tr>
+                    <tr><td>47,500 – 52,000</td><td>0</td></tr>
+                    <tr><td>52,000 – 56,500</td><td>0</td></tr>
+                    <tr><td>56,500 – 61,000</td><td>3</td></tr>
+                    <tr><td>61,000 – 65,500</td><td>1</td></tr>
+                    <tr><td>65,500 – 70,000</td><td>3</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </details>
+          </div>
+        </article>
+
+        <!-- ---------- GRÁFICA 2 ---------- -->
+        <article class="graph-card reveal" id="grafica-2" aria-labelledby="g2-title">
+          <header class="graph-head">
+            <span class="graph-number" aria-hidden="true">2</span>
+            <div class="graph-heading">
+              <h3 id="g2-title">Oferta por barrio</h3>
+              <p>En qué zonas del municipio se publica más vivienda.</p>
+            </div>
+            <span class="n-chip" title="Publicaciones con zona identificada">n = 91</span>
+          </header>
+
+          <div class="graph-toolbar">
+            <div class="tab-switch" role="tablist" aria-label="Vista de la gráfica 2">
+              <button class="tab-btn is-active" id="tab-g2-int" role="tab" aria-selected="true" aria-controls="panel-g2-int" data-tab="g2-int" type="button">Interactiva</button>
+              <button class="tab-btn" id="tab-g2-orig" role="tab" aria-selected="false" aria-controls="panel-g2-orig" data-tab="g2-orig" type="button">Original del repo</button>
+            </div>
+            <div class="control-group" aria-label="Opciones de la gráfica 2">
+              <button class="chip-btn is-active" data-g2-mode="all" type="button" aria-pressed="true">Todos los barrios</button>
+              <button class="chip-btn" data-g2-mode="top4" type="button" aria-pressed="false">Solo los 4 principales</button>
+              <button class="icon-btn" data-reset="chart2" type="button" title="Restablecer zoom" aria-label="Restablecer zoom de la gráfica 2">↺</button>
+            </div>
+          </div>
+
+          <div class="tab-panel is-active" id="panel-g2-int" role="tabpanel" aria-labelledby="tab-g2-int" data-panel="g2-int">
+            <div class="chart-wrap chart-wrap-bar">
+              <canvas id="chart2" role="img" aria-label="Barras horizontales con la oferta por barrio: Santos Suárez 26, Lawton 19, La Víbora 12, El Sevillano 12, Luyano 7, El Mónaco 6, Santa Catalina 5 y otros."></canvas>
+              <p class="chart-hint">Arrastra para mover · rueda o pellizco para zoom · doble clic para restablecer</p>
+            </div>
+            <p class="live-note" data-g2-note>Los 4 barrios principales reúnen <strong>69 de 91</strong> publicaciones con zona identificada (<strong>75.8%</strong>).</p>
+          </div>
+
+          <div class="tab-panel" id="panel-g2-orig" role="tabpanel" aria-labelledby="tab-g2-orig" data-panel="g2-orig" hidden>
+            <figure class="original-figure">
+              <img class="zoomable" src="img/grafico_2_oferta_por_zona.png" alt="Gráfica original del repositorio: barras horizontales de oferta por zona." loading="lazy" decoding="async" data-title="Gráfica 2 original: oferta por zona" data-caption="Imagen generada por graficos/generar_graficas.py. Haz clic para ampliar y arrastrar.">
+              <figcaption>
+                Imagen original del repositorio. La versión original contabiliza 84 publicaciones con zona;
+                el informe final, tras recuperar zonas del texto, contabiliza 91.
+                <a href="#nota-graficas">Ver nota técnica</a>.
+              </figcaption>
+            </figure>
+          </div>
+
+          <div class="explain-grid">
+            <div class="explain-block">
+              <h4><span aria-hidden="true">👀</span> ¿Qué muestra?</h4>
+              <p>El número de anuncios publicados en cada barrio o reparto. Solo incluye las 91 publicaciones que mencionan una zona; las otras 31 no permiten saber dónde está la vivienda.</p>
+            </div>
+            <div class="explain-block">
+              <h4><span aria-hidden="true">💡</span> ¿Qué significa?</h4>
+              <p>La oferta está concentrada: <strong>Santos Suárez (26)</strong>, <strong>Lawton (19)</strong>, <strong>La Víbora (12)</strong> y <strong>El Sevillano (12)</strong> reúnen el <strong>75.8%</strong> de los anuncios con zona. En el resto de barrios hay muy pocos casos.</p>
+            </div>
+            <div class="explain-block explain-key">
+              <h4><span aria-hidden="true">⭐</span> Dato clave</h4>
+              <p>Que un barrio tenga más anuncios <strong>no significa que sea más caro</strong>: solo significa que allí se publica más. Para comparar precios hay que mirar la gráfica 3 y tener en cuenta el tamaño de cada grupo.</p>
+            </div>
+            <div class="explain-block">
+              <h4><span aria-hidden="true">🖐️</span> Cómo explorar</h4>
+              <p>Pasa el mouse por cada barra para ver el total y su porcentaje. Usa «Solo los 4 principales» para comparar el grupo que concentra la oferta.</p>
+            </div>
+          </div>
+
+          <div class="graph-footer">
+            <p><strong>Fuente:</strong> informe final, pregunta B1. 91 de 122 publicaciones (74.6%) especifican zona; 31 (25.4%) no lo hacen.</p>
+            <details class="data-table">
+              <summary>Ver datos en tabla</summary>
+              <div class="table-wrap">
+                <table>
+                  <caption>Oferta por zona (91 publicaciones con zona identificada)</caption>
+                  <thead><tr><th scope="col">Barrio o reparto</th><th scope="col">Anuncios</th><th scope="col">% del total con zona</th></tr></thead>
+                  <tbody>
+                    <tr><td>Santos Suárez</td><td>26</td><td>28.6%</td></tr>
+                    <tr><td>Lawton</td><td>19</td><td>20.9%</td></tr>
+                    <tr><td>La Víbora</td><td>12</td><td>13.2%</td></tr>
+                    <tr><td>El Sevillano</td><td>12</td><td>13.2%</td></tr>
+                    <tr><td>Luyano</td><td>7</td><td>7.7%</td></tr>
+                    <tr><td>El Mónaco</td><td>6</td><td>6.6%</td></tr>
+                    <tr><td>Santa Catalina</td><td>5</td><td>5.5%</td></tr>
+                    <tr><td>Calzada 10 de Octubre</td><td>2</td><td>2.2%</td></tr>
+                    <tr><td>Vía Blanca</td><td>1</td><td>1.1%</td></tr>
+                    <tr><td>Vista Alegre</td><td>1</td><td>1.1%</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </details>
+          </div>
+        </article>
+
+        <!-- ---------- GRÁFICA 3 ---------- -->
+        <article class="graph-card reveal" id="grafica-3" aria-labelledby="g3-title">
+          <header class="graph-head">
+            <span class="graph-number" aria-hidden="true">3</span>
+            <div class="graph-heading">
+              <h3 id="g3-title">Media vs. mediana por barrio</h3>
+              <p>Dos formas de resumir el precio, y por qué no siempre coinciden.</p>
+            </div>
+            <span class="n-chip" title="Barrios con al menos 5 anuncios con precio en USD">n ≥ 5 por barrio</span>
+          </header>
+
+          <div class="graph-toolbar">
+            <div class="tab-switch" role="tablist" aria-label="Vista de la gráfica 3">
+              <button class="tab-btn is-active" id="tab-g3-int" role="tab" aria-selected="true" aria-controls="panel-g3-int" data-tab="g3-int" type="button">Interactiva</button>
+              <button class="tab-btn" id="tab-g3-orig" role="tab" aria-selected="false" aria-controls="panel-g3-orig" data-tab="g3-orig" type="button">Original del repo</button>
+            </div>
+            <div class="control-group" aria-label="Opciones de la gráfica 3">
+              <button class="chip-btn" data-g3-mode="media" type="button" aria-pressed="false">Media</button>
+              <button class="chip-btn" data-g3-mode="mediana" type="button" aria-pressed="false">Mediana</button>
+              <button class="chip-btn is-active" data-g3-mode="both" type="button" aria-pressed="true">Ambas</button>
+              <button class="icon-btn" data-reset="chart3" type="button" title="Restablecer zoom" aria-label="Restablecer zoom de la gráfica 3">↺</button>
+            </div>
+          </div>
+
+          <div class="tab-panel is-active" id="panel-g3-int" role="tabpanel" aria-labelledby="tab-g3-int" data-panel="g3-int">
+            <div class="chart-wrap chart-wrap-bar">
+              <canvas id="chart3" role="img" aria-label="Barras agrupadas con la media y la mediana del precio en USD para siete barrios con al menos cinco anuncios. El Mónaco tiene la media más alta y El Sevillano la mediana más alta."></canvas>
+              <p class="chart-hint">Arrastra para mover · rueda o pellizco para zoom · doble clic para restablecer</p>
+            </div>
+            <p class="live-note" data-g3-note><strong>El Mónaco</strong> tiene la media más alta ($57,667; n = 6), pero <strong>El Sevillano</strong> tiene la mediana más alta ($36,000; n = 10). Son grupos pequeños: úsalos como orientación, no como ranking definitivo.</p>
+          </div>
+
+          <div class="tab-panel" id="panel-g3-orig" role="tabpanel" aria-labelledby="tab-g3-orig" data-panel="g3-orig" hidden>
+            <figure class="original-figure">
+              <img class="zoomable" src="img/grafico_3_media_mediana_zona.png" alt="Gráfica original del repositorio: media y mediana por zona." loading="lazy" decoding="async" data-title="Gráfica 3 original: media vs mediana por zona" data-caption="Imagen generada por graficos/generar_graficas.py. Haz clic para ampliar y arrastrar.">
+              <figcaption>Imagen original del repositorio. Usa los barrios con al menos 5 anuncios con precio en USD. <a href="#nota-graficas">Ver nota técnica</a>.</figcaption>
+            </figure>
+          </div>
+
+          <div class="explain-grid">
+            <div class="explain-block">
+              <h4><span aria-hidden="true">👀</span> ¿Qué muestra?</h4>
+              <p>Para cada barrio con al menos 5 anuncios con precio en USD, compara la <strong>media</strong> (promedio) con la <strong>mediana</strong> (el valor que queda justo en el medio si ordenas los precios).</p>
+            </div>
+            <div class="explain-block">
+              <h4><span aria-hidden="true">💡</span> ¿Qué significa?</h4>
+              <p>Cuando la media es mucho más alta que la mediana, hay precios extremos que inflan el promedio. <strong>La mediana describe mejor el precio típico</strong> y es más difícil de distorsionar por una sola vivienda muy cara.</p>
+            </div>
+            <div class="explain-block explain-key">
+              <h4><span aria-hidden="true">⭐</span> Dato clave</h4>
+              <p>El Mónaco tiene la media más alta ($57,667) con solo 6 anuncios; La Víbora tiene 11 y una media de $49,591. El Sevillano lidera la mediana ($36,000, n = 10). <strong>Ningún grupo es grande</strong>: las diferencias son descriptivas.</p>
+            </div>
+            <div class="explain-block">
+              <h4><span aria-hidden="true">🖐️</span> Cómo explorar</h4>
+              <p>Alterna entre «Media», «Mediana» y «Ambas». Pasa el mouse para ver el valor exacto y el número de anuncios (n) de cada barrio.</p>
+            </div>
+          </div>
+
+          <div class="graph-footer">
+            <p><strong>Fuente:</strong> informe final y diccionario de datos. Publicaciones con precio en USD por zona, n ≥ 5. Incluye ventas y publicaciones sin operación declarada; por eso los n son mayores que los de las ventas explícitas.</p>
+            <details class="data-table">
+              <summary>Ver datos en tabla</summary>
+              <div class="table-wrap">
+                <table>
+                  <caption>Media y mediana del precio en USD por barrio (n ≥ 5)</caption>
+                  <thead><tr><th scope="col">Barrio</th><th scope="col">n</th><th scope="col">Media (USD)</th><th scope="col">Mediana (USD)</th></tr></thead>
+                  <tbody>
+                    <tr><td>El Mónaco</td><td>6</td><td>$57,666.67</td><td>$33,000</td></tr>
+                    <tr><td>La Víbora</td><td>11</td><td>$49,590.91</td><td>$26,000</td></tr>
+                    <tr><td>El Sevillano</td><td>10</td><td>$39,700</td><td>$36,000</td></tr>
+                    <tr><td>Santa Catalina</td><td>5</td><td>$37,200</td><td>$35,000</td></tr>
+                    <tr><td>Santos Suárez</td><td>23</td><td>$31,565.22</td><td>$22,500</td></tr>
+                    <tr><td>Luyano</td><td>7</td><td>$25,928.57</td><td>$25,000</td></tr>
+                    <tr><td>Lawton</td><td>16</td><td>$20,656.25</td><td>$20,000</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </details>
+          </div>
+        </article>
+
+        <!-- ---------- GRÁFICA 4 ---------- -->
+        <article class="graph-card reveal" id="grafica-4" aria-labelledby="g4-title">
+          <header class="graph-head">
+            <span class="graph-number" aria-hidden="true">4</span>
+            <div class="graph-heading">
+              <h3 id="g4-title">¿En qué moneda se publica?</h3>
+              <p>Dólares, pesos cubanos y anuncios sin precio.</p>
+            </div>
+            <span class="n-chip">n = 122</span>
+          </header>
+
+          <div class="graph-toolbar">
+            <div class="tab-switch" role="tablist" aria-label="Vista de la gráfica 4">
+              <button class="tab-btn is-active" id="tab-g4-int" role="tab" aria-selected="true" aria-controls="panel-g4-int" data-tab="g4-int" type="button">Interactiva</button>
+              <button class="tab-btn" id="tab-g4-orig" role="tab" aria-selected="false" aria-controls="panel-g4-orig" data-tab="g4-orig" type="button">Original del repo</button>
+            </div>
+            <div class="control-group" aria-label="Opciones de la gráfica 4">
+              <button class="chip-btn is-active" data-g4-mode="all" type="button" aria-pressed="true">Todo el universo</button>
+              <button class="chip-btn" data-g4-mode="currency" type="button" aria-pressed="false">Solo con moneda</button>
+            </div>
+          </div>
+
+          <div class="tab-panel is-active" id="panel-g4-int" role="tabpanel" aria-labelledby="tab-g4-int" data-panel="g4-int">
+            <div class="chart-wrap chart-wrap-donut">
+              <canvas id="chart4" role="img" aria-label="Gráfica de dona: 106 anuncios en USD, 1 en CUP y 15 sin precio sobre un total de 122."></canvas>
+            </div>
+            <p class="live-note" data-g4-note>En todo el universo, <strong>106 de 122</strong> publicaciones están en USD (<strong>86.9%</strong>); 15 no declaran precio y 1 está en CUP.</p>
+          </div>
+
+          <div class="tab-panel" id="panel-g4-orig" role="tabpanel" aria-labelledby="tab-g4-orig" data-panel="g4-orig" hidden>
+            <figure class="original-figure">
+              <img class="zoomable" src="img/grafico_4_moneda.png" alt="Gráfica original del repositorio: moneda declarada, USD, CUP y sin precio." loading="lazy" decoding="async" data-title="Gráfica 4 original: moneda declarada" data-caption="Imagen generada por graficos/generar_graficas.py. Haz clic para ampliar y arrastrar.">
+              <figcaption>Imagen original del repositorio. <a href="#nota-graficas">Ver nota técnica</a>.</figcaption>
+            </figure>
+          </div>
+
+          <div class="explain-grid">
+            <div class="explain-block">
+              <h4><span aria-hidden="true">👀</span> ¿Qué muestra?</h4>
+              <p>La moneda en la que se declara el precio. «Sin precio» no es una moneda: son anuncios que no permiten saber cuánto cuesta la vivienda.</p>
+            </div>
+            <div class="explain-block">
+              <h4><span aria-hidden="true">💡</span> ¿Qué significa?</h4>
+              <p>El mercado publicado funciona casi por completo en dólares. Entre las 107 publicaciones que declaran moneda, <strong>106 son USD (99.1%)</strong>. El único precio en CUP es un alquiler de 50,000 CUP. Quien solo tiene pesos cubanos encuentra muy pocas opciones comparables.</p>
+            </div>
+            <div class="explain-block explain-key">
+              <h4><span aria-hidden="true">⭐</span> Dato clave</h4>
+              <p>La dolarización no es solo una convención: <strong>cambia quién puede participar</strong>. Si el precio está en USD y no tienes acceso a divisas, el anuncio deja de ser una opción real.</p>
+            </div>
+            <div class="explain-block">
+              <h4><span aria-hidden="true">🖐️</span> Cómo explorar</h4>
+              <p>Cambia entre «Todo el universo» y «Solo con moneda» para ver cómo sube el porcentaje de USD cuando se excluyen los anuncios sin precio. Pasa el mouse por cada porción para ver el porcentaje.</p>
+            </div>
+          </div>
+
+          <div class="graph-footer">
+            <p><strong>Fuente:</strong> informe final, preguntas C1 y C2. El precio en CUP no se convierte a USD porque no hay un tipo de cambio único y defendible para el corte.</p>
+            <details class="data-table">
+              <summary>Ver datos en tabla</summary>
+              <div class="table-wrap">
+                <table>
+                  <caption>Moneda declarada y anuncios sin precio</caption>
+                  <thead><tr><th scope="col">Categoría</th><th scope="col">Anuncios</th><th scope="col">% del total (122)</th></tr></thead>
+                  <tbody>
+                    <tr><td>USD</td><td>106</td><td>86.9%</td></tr>
+                    <tr><td>CUP</td><td>1</td><td>0.8%</td></tr>
+                    <tr><td>Sin precio</td><td>15</td><td>12.3%</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </details>
+          </div>
+        </article>
+
+        <!-- ---------- GRÁFICA 5 ---------- -->
+        <article class="graph-card reveal" id="grafica-5" aria-labelledby="g5-title">
+          <header class="graph-head">
+            <span class="graph-number" aria-hidden="true">5</span>
+            <div class="graph-heading">
+              <h3 id="g5-title">La falta de información (opacidad)</h3>
+              <p>Cuántos anuncios permiten saber precio y zona a la vez.</p>
+            </div>
+            <span class="n-chip">n = 122</span>
+          </header>
+
+          <div class="graph-toolbar">
+            <div class="tab-switch" role="tablist" aria-label="Vista de la gráfica 5">
+              <button class="tab-btn is-active" id="tab-g5-int" role="tab" aria-selected="true" aria-controls="panel-g5-int" data-tab="g5-int" type="button">Interactiva</button>
+              <button class="tab-btn" id="tab-g5-orig" role="tab" aria-selected="false" aria-controls="panel-g5-orig" data-tab="g5-orig" type="button">Original del repo</button>
+            </div>
+            <div class="control-group" aria-label="Opciones de la gráfica 5">
+              <button class="chip-btn is-active" data-g5-mode="donut" type="button" aria-pressed="true">Dona</button>
+              <button class="chip-btn" data-g5-mode="bar" type="button" aria-pressed="false">Barras</button>
+            </div>
+          </div>
+
+          <div class="tab-panel is-active" id="panel-g5-int" role="tabpanel" aria-labelledby="tab-g5-int" data-panel="g5-int">
+            <div class="chart-wrap chart-wrap-donut" data-g5-view="donut">
+              <canvas id="chart5d" role="img" aria-label="Gráfica de dona: 82 anuncios con precio y zona, 25 solo con precio, 9 solo con zona y 6 sin ninguno."></canvas>
+            </div>
+            <div class="chart-wrap chart-wrap-bar" data-g5-view="bar" hidden>
+              <canvas id="chart5b" role="img" aria-label="Gráfica de barras con los mismos cuatro grupos de opacidad."></canvas>
+            </div>
+            <p class="live-note" data-g5-note><strong>82 de 122 (67.2%)</strong> permiten cruzar precio y zona. <strong>6 (4.9%)</strong> no tienen ninguno de los dos datos. La opacidad no es un detalle: limita la capacidad de comparar.</p>
+          </div>
+
+          <div class="tab-panel" id="panel-g5-orig" role="tabpanel" aria-labelledby="tab-g5-orig" data-panel="g5-orig" hidden>
+            <figure class="original-figure">
+              <img class="zoomable" src="img/grafico_5_opacidad.png" alt="Gráfica original del repositorio: opacidad de información, precio y zona." loading="lazy" decoding="async" data-title="Gráfica 5 original: opacidad de información" data-caption="Imagen generada por graficos/generar_graficas.py. Haz clic para ampliar y arrastrar.">
+              <figcaption>
+                Imagen original del repositorio. La versión original contabiliza 77 con precio y zona y 8 sin ninguno;
+                el informe final, tras recuperar zonas del texto, contabiliza 82 y 6.
+                <a href="#nota-graficas">Ver nota técnica</a>.
+              </figcaption>
+            </figure>
+          </div>
+
+          <div class="explain-grid">
+            <div class="explain-block">
+              <h4><span aria-hidden="true">👀</span> ¿Qué muestra?</h4>
+              <p>Cuatro grupos: anuncios con <strong>precio y zona</strong>, solo con precio, solo con zona, o sin ninguno de los dos. Es una medida de cuánta información falta para comparar.</p>
+            </div>
+            <div class="explain-block">
+              <h4><span aria-hidden="true">💡</span> ¿Qué significa?</h4>
+              <p><strong>67.2%</strong> permite cruzar precio y zona. Un <strong>25.4%</strong> no dice la zona, un <strong>12.3%</strong> no dice el precio y un <strong>4.9%</strong> no dice ninguna de las dos cosas. Sin esos datos, el comprador tiene que llamar o visitar para poder comparar.</p>
+            </div>
+            <div class="explain-block explain-key">
+              <h4><span aria-hidden="true">⭐</span> Dato clave</h4>
+              <p>La falta de información no afecta a todos por igual: quien puede llamar y visitar accede a lo que falta; quien depende del anuncio queda en desventaja. Por eso la opacidad es parte del problema social, no solo un defecto técnico.</p>
+            </div>
+            <div class="explain-block">
+              <h4><span aria-hidden="true">🖐️</span> Cómo explorar</h4>
+              <p>Cambia entre «Dona» y «Barras» para comparar los grupos. Pasa el mouse por cada porción o barra para ver el total y el porcentaje.</p>
+            </div>
+          </div>
+
+          <div class="graph-footer">
+            <p><strong>Fuente:</strong> informe final, preguntas D1–D4. 91 con zona (74.6%); 31 sin zona (25.4%); 15 sin precio (12.3%); 6 sin ambos (4.9%).</p>
+            <details class="data-table">
+              <summary>Ver datos en tabla</summary>
+              <div class="table-wrap">
+                <table>
+                  <caption>Opacidad de información (122 publicaciones)</caption>
+                  <thead><tr><th scope="col">Grupo</th><th scope="col">Anuncios</th><th scope="col">%</th></tr></thead>
+                  <tbody>
+                    <tr><td>Precio + zona</td><td>82</td><td>67.2%</td></tr>
+                    <tr><td>Solo precio</td><td>25</td><td>20.5%</td></tr>
+                    <tr><td>Solo zona</td><td>9</td><td>7.4%</td></tr>
+                    <tr><td>Ninguno</td><td>6</td><td>4.9%</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </details>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ================= CONCLUSIONES ================= -->
+    <section class="section section-conclusions" id="conclusiones" aria-labelledby="conclusionesTitle">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="kicker">Lo que dicen los datos</p>
+          <h2 id="conclusionesTitle">8 conclusiones en lenguaje sencillo</h2>
+          <p class="section-lead">Cada conclusión indica el tamaño del grupo (n) y el nivel de evidencia del informe. No se trata de generalizar a toda La Habana, sino de describir lo que muestran estos 122 anuncios.</p>
+        </div>
+
+        <ol class="conclusion-list">
+          <li class="conclusion-card reveal">
+            <span class="conclusion-num">1</span>
+            <div>
+              <h3>La base verificada es de 122 publicaciones</h3>
+              <p>83 de Revolico y 39 de Facebook. Se excluyeron 46 de otros municipios, 8 indeterminadas y 1 fuera del universo. Los 55 registros descartados se conservan íntegros con su motivo.</p>
+              <span class="evidence evidence-solid">Evidencia sólida · censo del universo</span>
+            </div>
+          </li>
+          <li class="conclusion-card reveal">
+            <span class="conclusion-num">2</span>
+            <div>
+              <h3>El mercado publicado está dolarizado</h3>
+              <p>106 de 107 publicaciones con moneda declarada están en USD (99.1%); sobre el total, 106 de 122 (86.9%). El único precio en CUP es un alquiler. Esto describe la convención de publicación, no todas las transacciones.</p>
+              <span class="evidence evidence-solid">Evidencia sólida · n = 107</span>
+            </div>
+          </li>
+          <li class="conclusion-card reveal">
+            <span class="conclusion-num">3</span>
+            <div>
+              <h3>El precio típico es menor que el promedio</h3>
+              <p>La mediana de las ventas en USD es $21,000 y la media $26,357.14. El 80% central está entre $6,100 y $60,000. Unas pocas viviendas muy caras elevan la media: para orientarte, usa la mediana.</p>
+              <span class="evidence evidence-solid">Evidencia sólida · n = 42</span>
+            </div>
+          </li>
+          <li class="conclusion-card reveal">
+            <span class="conclusion-num">4</span>
+            <div>
+              <h3>El alquiler no tiene precio estimable</h3>
+              <p>Solo hay 3 anuncios de alquiler: 1 declara precio (50,000 CUP) y ninguno lo declara en USD. No se puede calcular una media ni una mediana de alquiler con esta base. La ausencia es el hallazgo.</p>
+              <span class="evidence evidence-warn">No estimable · n = 3</span>
+            </div>
+          </li>
+          <li class="conclusion-card reveal">
+            <span class="conclusion-num">5</span>
+            <div>
+              <h3>La oferta está concentrada en pocos barrios</h3>
+              <p>Santos Suárez, Lawton, La Víbora y El Sevillano reúnen 69 de las 91 publicaciones con zona (75.8%). Las diferencias de precio entre barrios son descriptivas: los grupos son pequeños (n = 5–23) y los intervalos son amplios.</p>
+              <span class="evidence evidence-mid">Evidencia descriptiva · n = 91</span>
+            </div>
+          </li>
+          <li class="conclusion-card reveal">
+            <span class="conclusion-num">6</span>
+            <div>
+              <h3>Falta información básica</h3>
+              <p>25.4% no especifica zona, 12.3% no declara precio y 4.9% no dice ninguna de las dos cosas. Solo 67.2% permite cruzar precio y zona. Sin esos datos, comparar exige contactar al vendedor.</p>
+              <span class="evidence evidence-solid">Evidencia sólida · n = 122</span>
+            </div>
+          </li>
+          <li class="conclusion-card reveal">
+            <span class="conclusion-num">7</span>
+            <div>
+              <h3>La informalidad existe, pero no domina</h3>
+              <p>12 de 122 publicaciones (9.8%) usan lenguaje de oportunidad, permuta o cambio. Las 12 son de Revolico; Facebook no aporta texto suficiente para medir esta dimensión, así que es una cota inferior. «Oportunidad» aparece en 10.</p>
+              <span class="evidence evidence-mid">Evidencia descriptiva · n = 12</span>
+            </div>
+          </li>
+          <li class="conclusion-card reveal">
+            <span class="conclusion-num">8</span>
+            <div>
+              <h3>El apartamento es la opción más accesible</h3>
+              <p>En ventas en USD, el apartamento tiene media $16,409.09 y mediana $15,000 (n = 11); la casa, media $31,500 y mediana $22,500 (n = 27). La diferencia se mantiene en P10–P90. Son precios de oferta, no de transacción.</p>
+              <span class="evidence evidence-solid">Evidencia sólida · n = 38</span>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ================= MÉTODO ================= -->
+    <section class="section section-method" id="metodo" aria-labelledby="metodoTitle">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="kicker">Cómo se hizo</p>
+          <h2 id="metodoTitle">Método, verificación y preguntas</h2>
+          <p class="section-lead">El proyecto no se apoya en la etiqueta automática del scraper. Verifica cada anuncio, conserva los descartes y reporta la ausencia de datos como un resultado, no como un defecto.</p>
+        </div>
+
+        <div class="method-steps">
+          <article class="method-step reveal">
+            <span class="step-num">1</span>
+            <h3>Recopilar</h3>
+            <p>Se unificaron anuncios de Revolico (corte 31/10/2026) y Facebook (captura 04/11/2026). El universo inicial fue de 176 publicaciones.</p>
+          </article>
+          <article class="method-step reveal">
+            <span class="step-num">2</span>
+            <h3>Verificar</h3>
+            <p>Se usó el <strong>título como evidencia principal</strong>: si nombra Diez de Octubre o un reparto interno, confirma; si nombra un lugar externo, descarta. Los topónimos se geocodificaron y se comprobó punto-en-polígono contra el GeoJSON municipal.</p>
+          </article>
+          <article class="method-step reveal">
+            <span class="step-num">3</span>
+            <h3>Clasificar sin imputar</h3>
+            <p>Precio, zona, tipo y operación se toman de los campos declarados. Si faltan, se conservan como ausencia: <strong>no se rellenan con ceros, medias ni valores plausibles</strong>.</p>
+          </article>
+          <article class="method-step reveal">
+            <span class="step-num">4</span>
+            <h3>Analizar y controlar</h3>
+            <p>Se responden 30 preguntas en 6 bloques. Un script de control valida 36 cifras contra los datos y 8 pruebas de contrato protegen el universo verificado.</p>
+          </article>
+        </div>
+
+        <div class="table-card reveal">
+          <h3>Resultado de la verificación municipal</h3>
+          <div class="table-wrap">
+            <table>
+              <caption>Publicaciones por resultado y fuente</caption>
+              <thead>
+                <tr><th scope="col">Resultado</th><th scope="col">Revolico (n = 134)</th><th scope="col">Facebook (n = 42)</th><th scope="col">Unificado (n = 176)</th></tr>
+              </thead>
+              <tbody>
+                <tr class="row-ok"><td>SÍ, dentro de Diez de Octubre</td><td>83</td><td>39</td><td><strong>122</strong></td></tr>
+                <tr><td>NO, otro municipio</td><td>46</td><td>0</td><td>46</td></tr>
+                <tr><td>INDETERMINADO</td><td>5</td><td>3</td><td>8</td></tr>
+                <tr><td>CONTRADICTORIO</td><td>0</td><td>0</td><td>0</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="table-note">Además de los 54 descartes del universo unificado (46 + 8), se conserva 1 registro que ya estaba fuera de la base (<code>facebook-27</code>): en total, 55 registros con motivo.</p>
+        </div>
+
+        <div class="question-grid">
+          <article class="question-card reveal">
+            <span class="block-letter">A</span>
+            <h3>Precios</h3>
+            <p>¿Cuánto cuesta comprar y alquilar? Mediana, media y rango P10–P90. El alquiler no es estimable.</p>
+            <span class="evidence evidence-solid">Sólida · n = 42</span>
+          </article>
+          <article class="question-card reveal">
+            <span class="block-letter">B</span>
+            <h3>Territorio</h3>
+            <p>¿Qué barrios concentran la oferta y cómo cambian los precios? 91 publicaciones con zona.</p>
+            <span class="evidence evidence-mid">Descriptiva · n = 91</span>
+          </article>
+          <article class="question-card reveal">
+            <span class="block-letter">C</span>
+            <h3>Dolarización</h3>
+            <p>¿En qué moneda se publica? 99.1% de quienes declaran moneda usan USD; 86.9% del total.</p>
+            <span class="evidence evidence-solid">Sólida · n = 107</span>
+          </article>
+          <article class="question-card reveal">
+            <span class="block-letter">D</span>
+            <h3>Opacidad</h3>
+            <p>¿Cuánta información falta? Sin zona 25.4%; sin precio 12.3%; sin ambos 4.9%.</p>
+            <span class="evidence evidence-solid">Sólida · n = 122</span>
+          </article>
+          <article class="question-card reveal">
+            <span class="block-letter">E</span>
+            <h3>Informalidad</h3>
+            <p>¿Aparecen «oportunidad», «permuta» o «cambio»? 9.8%, solo en Revolico: cota inferior.</p>
+            <span class="evidence evidence-mid">Descriptiva · n = 12</span>
+          </article>
+          <article class="question-card reveal">
+            <span class="block-letter">F</span>
+            <h3>Tipos de inmueble</h3>
+            <p>¿Qué se publica más y qué es más accesible? La casa es el tipo más publicado; el apartamento, el más barato.</p>
+            <span class="evidence evidence-solid">Sólida · n = 38</span>
+          </article>
+        </div>
+
+        <details class="note-details reveal" id="glosario">
+          <summary>Palabras clave explicadas</summary>
+          <dl class="glossary">
+            <div><dt>Media</dt><dd>El promedio: suma todos los valores y divide entre la cantidad. Es sensible a los valores extremos.</dd></div>
+            <div><dt>Mediana</dt><dd>El valor que queda en el medio cuando ordenas los datos. Describe mejor el precio «típico».</dd></div>
+            <div><dt>P10–P90</dt><dd>El rango donde está el 80% central de los datos. Deja fuera el 10% más barato y el 10% más caro.</dd></div>
+            <div><dt>n</dt><dd>La cantidad de anuncios que sostienen un resultado. Un n pequeño hace que las conclusiones sean menos firmes.</dd></div>
+            <div><dt>Opacidad</dt><dd>Falta de información básica (precio, zona u operación) en el anuncio.</dd></div>
+            <div><dt>Dolarización</dt><dd>Uso del dólar como moneda de publicación de los precios.</dd></div>
+          </dl>
+        </details>
+      </div>
+    </section>
+
+    <!-- ================= EVIDENCIA ================= -->
+    <section class="section section-evidence" id="evidencia" aria-labelledby="evidenciaTitle">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="kicker">Evidencia complementaria</p>
+          <h2 id="evidenciaTitle">Entrevistas y capturas: contexto, no porcentajes</h2>
+          <p class="section-lead">Además de los 122 anuncios, el proyecto reúne testimonios y capturas de pantalla. No se usan para calcular porcentajes ni se mapean por zonas: acompañan la lectura cualitativa del mercado.</p>
+        </div>
+
+        <div class="evidence-grid">
+          <article class="evidence-card reveal">
+            <span class="evidence-icon" aria-hidden="true">🎙️</span>
+            <strong>13</strong>
+            <h3>grabaciones de audio</h3>
+            <p>Entrevistas anónimas a residentes (E-01 a E-13). No se incluyen las transcripciones para proteger la privacidad.</p>
+          </article>
+          <article class="evidence-card reveal">
+            <span class="evidence-icon" aria-hidden="true">📝</span>
+            <strong>24</strong>
+            <h3>entrevistas de texto</h3>
+            <p>Registros E-14 a E-37. <strong>No son transcripciones de los audios</strong>: son registros independientes.</p>
+          </article>
+          <article class="evidence-card reveal">
+            <span class="evidence-icon" aria-hidden="true">📸</span>
+            <strong>86</strong>
+            <h3>capturas de Facebook</h3>
+            <p>Evidencia visual de anuncios en grupos y páginas de compraventa, capturadas entre octubre y noviembre de 2026.</p>
+          </article>
+        </div>
+
+        <div class="honesty-card reveal">
+          <h3><span aria-hidden="true">⚠️</span> Honestidad sobre la evidencia</h3>
+          <ul>
+            <li>Las <strong>37 entrevistas</strong> (13 de audio + 24 de texto) son evidencia cualitativa: <strong>no son una muestra representativa</strong> ni forman parte de las 122 publicaciones.</li>
+            <li>Las 24 entrevistas de texto <strong>no son la transcripción de los 13 audios</strong>. Además, varias se repiten entre sí: por ejemplo, E-16 ≈ E-29, E-17 ≈ E-31 y E-18 ≈ E-30/E-32.</li>
+            <li>No todos los testimonios son independientes. Por eso no se presentan como «37 opiniones únicas» ni se usan para estimar proporciones.</li>
+            <li>Las 86 capturas de Facebook son referencia visual; tampoco se contabilizan como parte del universo de 122.</li>
+          </ul>
+        </div>
+
+        <div class="duplicate-note reveal">
+          <h3>Un duplicado conocido</h3>
+          <p>Se detectó un par de publicaciones que describen la misma propiedad y el mismo precio en Revolico y Facebook (<code>revolico-58326838</code> y <code>facebook-35</code>). Se conserva para no alterar el universo de 122, pero el <strong>n efectivo sería 121</strong> si se eliminara. No cambia las conclusiones.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= LÍMITES ================= -->
+    <section class="section section-limits" id="limites" aria-labelledby="limitesTitle">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="kicker">Lo que no se puede afirmar</p>
+          <h2 id="limitesTitle">Límites del estudio</h2>
+          <p class="section-lead">Un análisis honesto también dice qué no puede saber. Estos límites no invalidan los hallazgos: delimitan su alcance.</p>
+        </div>
+
+        <div class="limits-grid">
+          <article class="limit-card reveal"><span aria-hidden="true">🎲</span><h3>Muestra no probabilística</h3><p>122 anuncios no representan necesariamente todo el mercado de vivienda del municipio. No hay serie temporal: el corte de Revolico es único y Facebook no tiene fechas homogéneas.</p></article>
+          <article class="limit-card reveal"><span aria-hidden="true">🏷️</span><h3>Precios de oferta, no de transacción</h3><p>Los valores son lo que se pide en el anuncio, no lo que finalmente se paga. La diferencia entre ambos no se observa con estos datos.</p></article>
+          <article class="limit-card reveal"><span aria-hidden="true">📐</span><h3>Sin metros cuadrados ni habitaciones</h3><p>No hay datos homogéneos de superficie, habitaciones, baños, estado legal o año de construcción. Solo 6 publicaciones de Facebook traen área en m²; ninguna de Revolico. No se puede calcular precio por m².</p></article>
+          <article class="limit-card reveal"><span aria-hidden="true">🔑</span><h3>Alquiler con n = 3</h3><p>Solo 3 alquileres, 1 con precio y ninguno en USD. No se puede estimar un precio de alquiler ni comparar compra y alquiler.</p></article>
+          <article class="limit-card reveal"><span aria-hidden="true">📍</span><h3>Zonas con grupos pequeños</h3><p>Los promedios por barrio se basan en 5–23 anuncios. Los rankings son descriptivos; los intervalos de confianza son amplios.</p></article>
+          <article class="limit-card reveal"><span aria-hidden="true">🧭</span><h3>Verificación con límites</h3><p>El polígono municipal es una simplificación de 11 vértices y no resuelve casos catastrales a pocos metros del borde. Las 8 indeterminadas se excluyen, lo que puede introducir un sesgo de selección.</p></article>
+          <article class="limit-card reveal"><span aria-hidden="true">💱</span><h3>CUP sin convertir</h3><p>El único precio en CUP no se convierte a USD porque no hay un tipo de cambio único y defendible para el corte. Se reporta como hallazgo.</p></article>
+          <article class="limit-card reveal"><span aria-hidden="true">👁️</span><h3>Sesgo de publicación</h3><p>Las viviendas que no se publican, o que circulan en canales cerrados, no aparecen. La opacidad medida es la del mercado digital visible, no la del mercado total.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ANEXO ORIGINALES ================= -->
+    <section class="section section-gallery" id="originales" aria-labelledby="originalesTitle">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="kicker">Anexo visual</p>
+          <h2 id="originalesTitle">Las gráficas originales del repositorio</h2>
+          <p class="section-lead">Estas son las cinco imágenes que genera <code>graficos/generar_graficas.py</code> en el repositorio. Haz clic en cualquiera para ampliarla, arrastrarla y hacer zoom.</p>
+        </div>
+
+        <div class="gallery-grid">
+          <figure class="gallery-item reveal">
+            <img class="zoomable" src="img/grafico_1_precios_venta_usd.png" alt="Gráfica original 1: precios de venta en USD." loading="lazy" decoding="async" data-title="Gráfica 1 original: precios de venta en USD" data-caption="n = 43 en la imagen original; el informe final usa n = 42.">
+            <figcaption>Precios de venta en USD</figcaption>
+          </figure>
+          <figure class="gallery-item reveal">
+            <img class="zoomable" src="img/grafico_2_oferta_por_zona.png" alt="Gráfica original 2: oferta por zona." loading="lazy" decoding="async" data-title="Gráfica 2 original: oferta por zona" data-caption="n = 84 con zona en la imagen original; el informe final usa 91.">
+            <figcaption>Oferta por zona</figcaption>
+          </figure>
+          <figure class="gallery-item reveal">
+            <img class="zoomable" src="img/grafico_3_media_mediana_zona.png" alt="Gráfica original 3: media y mediana por zona." loading="lazy" decoding="async" data-title="Gráfica 3 original: media vs mediana por zona" data-caption="Barrios con al menos 5 anuncios con precio en USD.">
+            <figcaption>Media vs. mediana por zona</figcaption>
+          </figure>
+          <figure class="gallery-item reveal">
+            <img class="zoomable" src="img/grafico_4_moneda.png" alt="Gráfica original 4: moneda declarada." loading="lazy" decoding="async" data-title="Gráfica 4 original: moneda declarada" data-caption="106 USD, 1 CUP y 15 sin precio.">
+            <figcaption>Moneda declarada</figcaption>
+          </figure>
+          <figure class="gallery-item reveal">
+            <img class="zoomable" src="img/grafico_5_opacidad.png" alt="Gráfica original 5: opacidad de información." loading="lazy" decoding="async" data-title="Gráfica 5 original: opacidad de información" data-caption="77 con precio y zona y 8 sin ninguno en la imagen original; el informe final usa 82 y 6.">
+            <figcaption>Opacidad de información</figcaption>
+          </figure>
+        </div>
+
+        <details class="note-details reveal" id="nota-graficas">
+          <summary>Nota técnica: ¿por qué algunas imágenes originales muestran n distintos?</summary>
+          <p>
+            Las imágenes de <code>graficos/</code> se generan con <code>graficos/generar_graficas.py</code>,
+            que usa los campos crudos de operación y una lista más corta de barrios. El informe final
+            usa una clasificación textual más estricta y recupera zonas mencionadas en el texto. Por eso
+            la gráfica 1 original muestra n = 43 y el informe n = 42; la gráfica 2 original, n = 84 y el
+            informe 91; y la gráfica 5 original, 77 con precio y zona y 8 sin ninguno, frente a 82 y 6
+            en el informe.
+          </p>
+          <p>
+            <strong>Las gráficas interactivas de esta web usan las cifras del informe final</strong>,
+            validadas por <code>scripts/cifras_control.py</code> (36/36 cifras) y por las 8 pruebas de
+            contrato. Las imágenes originales se incluyen para que el visitante pueda ver exactamente lo
+            que produce el repositorio. Esta diferencia no cambia las conclusiones, pero se documenta
+            para no ocultar el detalle metodológico.
+          </p>
+        </details>
+      </div>
+    </section>
+
+    <!-- ================= FUENTES ================= -->
+    <section class="section section-sources" id="fuentes" aria-labelledby="fuentesTitle">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="kicker">Trazabilidad</p>
+          <h2 id="fuentesTitle">Fuentes y enlaces del proyecto</h2>
+          <p class="section-lead">Todo lo que aparece en esta web se puede verificar en el repositorio. Esta página es independiente: no modifica ni hace commit sobre el proyecto original.</p>
+        </div>
+
+        <div class="source-grid">
+          <a class="source-card reveal" href="https://github.com/lcdie/Mercado-digital-cubano-en-10-de-octubre/blob/main/analisis/informe_final.md" target="_blank" rel="noopener">
+            <span aria-hidden="true">📄</span><h3>Informe final</h3><p>Las 30 preguntas A–F y las 8 conclusiones.</p>
+          </a>
+          <a class="source-card reveal" href="https://github.com/lcdie/Mercado-digital-cubano-en-10-de-octubre/blob/main/analisis/informe_final.pdf" target="_blank" rel="noopener">
+            <span aria-hidden="true">📕</span><h3>Informe en PDF</h3><p>Versión de 16 páginas para leer o imprimir.</p>
+          </a>
+          <a class="source-card reveal" href="https://github.com/lcdie/Mercado-digital-cubano-en-10-de-octubre/blob/main/data_dictionary.md" target="_blank" rel="noopener">
+            <span aria-hidden="true">🗂️</span><h3>Diccionario de datos</h3><p>Campos, cobertura, convenciones y estadísticos clave.</p>
+          </a>
+          <a class="source-card reveal" href="https://github.com/lcdie/Mercado-digital-cubano-en-10-de-octubre/blob/main/reporte_tecnico.md" target="_blank" rel="noopener">
+            <span aria-hidden="true">⚙️</span><h3>Reporte técnico</h3><p>Pipeline, verificación y decisiones de procesamiento.</p>
+          </a>
+          <a class="source-card reveal" href="https://github.com/lcdie/Mercado-digital-cubano-en-10-de-octubre/blob/main/graficos/generar_graficas.py" target="_blank" rel="noopener">
+            <span aria-hidden="true">📊</span><h3>Script de gráficas</h3><p>El código que produce las cinco imágenes originales.</p>
+          </a>
+          <a class="source-card reveal" href="https://github.com/lcdie/Mercado-digital-cubano-en-10-de-octubre/blob/main/datos/limpios/unificado_confirmados_diez_octubre.json" target="_blank" rel="noopener">
+            <span aria-hidden="true">🗃️</span><h3>Base de datos</h3><p>Las 122 publicaciones confirmadas, en JSON.</p>
+          </a>
+          <a class="source-card reveal" href="https://github.com/lcdie/Mercado-digital-cubano-en-10-de-octubre/blob/main/datos/limpios/descartados_diez_octubre.json" target="_blank" rel="noopener">
+            <span aria-hidden="true">🗑️</span><h3>Descartes</h3><p>Los 55 registros no incluidos, con su motivo.</p>
+          </a>
+          <a class="source-card reveal" href="https://github.com/lcdie/Mercado-digital-cubano-en-10-de-octubre" target="_blank" rel="noopener">
+            <span aria-hidden="true">🐙</span><h3>Repositorio completo</h3><p>Código, datos, pruebas, informe y presentación.</p>
+          </a>
+        </div>
+
+        <div class="repo-cta reveal">
+          <div>
+            <p class="kicker">Proyecto original</p>
+            <h3>Mercado digital cubano en 10 de Octubre</h3>
+            <p>Repositorio de <strong>lcdie</strong> · Licencia MIT · Profesor: Yudivian Almeida Cruz</p>
+          </div>
+          <div class="repo-cta-actions">
+            <a class="btn btn-primary" href="https://github.com/lcdie/Mercado-digital-cubano-en-10-de-octubre" target="_blank" rel="noopener">Abrir en GitHub <span aria-hidden="true">↗</span></a>
+            <button class="btn btn-ghost" id="shareBottom" type="button">Compartir esta web</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <p class="footer-brand">Mercado <strong>10 de Octubre</strong></p>
+        <p>Una web independiente para explicar el proyecto de Ciencia de Datos de MATCOM, Universidad de La Habana.</p>
+      </div>
+      <div>
+        <h3>Datos</h3>
+        <p>Revolico: corte 31/10/2026<br>Facebook: captura 04/11/2026</p>
+        <p class="muted">Precios de oferta, no de transacción.</p>
+      </div>
+      <div>
+        <h3>Enlaces</h3>
+        <p><a href="https://github.com/lcdie/Mercado-digital-cubano-en-10-de-octubre" target="_blank" rel="noopener">Repositorio del proyecto</a></p>
+        <p><a href="https://github.com/lcdie/mercado-web" target="_blank" rel="noopener">Repositorio de esta web</a></p>
+        <p><a href="https://github.com/lcdie/Mercado-digital-cubano-en-10-de-octubre/blob/main/LICENSE" target="_blank" rel="noopener">Licencia MIT</a></p>
       </div>
     </div>
-  </section>
-
-  <!-- Gráficas interactivas -->
-  <section id="graficas" class="graficas">
-    <div class="container">
-      <h2>📊 ¿Qué dicen los datos?</h2>
-      <p class="sub">Toca las gráficas, mueve el slider y explora. Cada una tiene su explicación debajo.</p>
-
-      <!-- Gráfica 1 -->
-      <div class="grafica-card">
-        <div class="grafica-titulo">1. Precios de venta en dólares (USD)</div>
-        <div class="grafica-controles">
-          <button class="btn-filtro activo" data-target="g1" data-filtro="todos">Todos</button>
-          <button class="btn-filtro" data-target="g1" data-filtro="rango">Rango P10-P90</button>
-        </div>
-        <canvas id="graf1"></canvas>
-        <div class="explicacion">
-          <strong>¿Qué muestra?</strong> Los precios de compra que piden los vendedores en dólares.<br>
-          <strong>¿Qué significa?</strong> La mayoría se pide entre <strong>$6,100 y $60,000 USD</strong>. La mitad de las ventas queda por debajo de <strong>$21,000 USD</strong>, pero el promedio sube a unos $26,357 porque hay algunas muy caras.
-        </div>
-      </div>
-
-      <!-- Gráfica 2 -->
-      <div class="grafica-card">
-        <div class="grafica-titulo">2. Oferta por zona (barrios)</div>
-        <div class="grafica-controles">
-          <button class="btn-filtro activo" data-target="g2" data-filtro="todos">Todos</button>
-          <button class="btn-filtro" data-target="g2" data-filtro="top4">Solo los 4 principales</button>
-        </div>
-        <canvas id="graf2"></canvas>
-        <div class="explicacion">
-          <strong>¿Qué muestra?</strong> En qué barrios se publican más anuncios.<br>
-          <strong>¿Qué significa?</strong> Cuatro barrios concentran casi todo: <strong>Santos Suárez, Lawton, La Víbora y El Sevillano</strong>. Juntos reúnen alrededor del 76% de los anuncios con zona identificada.
-        </div>
-      </div>
-
-      <!-- Gráfica 3 -->
-      <div class="grafica-card">
-        <div class="grafica-titulo">3. Media vs Mediana por zona (USD)</div>
-        <div class="grafica-controles">
-          <button class="btn-filtro activo" data-target="g3" data-metrica="media">Ver Medias</button>
-          <button class="btn-filtro" data-target="g3" data-metrica="mediana">Ver Medianas</button>
-        </div>
-        <canvas id="graf3"></canvas>
-        <div class="explicacion">
-          <strong>¿Qué muestra?</strong> Compara el precio promedio (media) con el precio típico (mediana) por barrio.<br>
-          <strong>¿Qué significa?</strong> La mediana es más confiable porque no se deja engañar por anuncios muy caros. Fíjate más en la mediana de tu barrio.
-        </div>
-      </div>
-
-      <!-- Gráfica 4 -->
-      <div class="grafica-card">
-        <div class="grafica-titulo">4. ¿En qué moneda se publican los precios?</div>
-        <canvas id="graf4"></canvas>
-        <div class="explicacion">
-          <strong>¿Qué muestra?</strong> Si los anunciantes declaran el precio en dólares (USD) o en pesos cubanos (CUP).<br>
-          <strong>¿Qué significa?</strong> Casi todo el mercado publicado está en dólares: <strong>99.1%</strong> de los anuncios que declaran moneda usan USD. Solo un anuncio usa CUP.
-        </div>
-      </div>
-
-      <!-- Gráfica 5 -->
-      <div class="grafica-card">
-        <div class="grafica-titulo">5. Falta de información (opacidad)</div>
-        <canvas id="graf5"></canvas>
-        <div class="explicacion">
-          <strong>¿Qué muestra?</strong> Cuántos anuncios tienen precio, cuántos tienen zona, y cuántos no tienen ni una cosa ni la otra.<br>
-          <strong>¿Qué significa?</strong> Solo <strong>67.2%</strong> de los anuncios permiten saber a la vez cuánto cuesta y dónde está. Un <strong>4.9%</strong> no dice ni el precio ni la zona.
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Conclusiones -->
-  <section class="conclusiones">
-    <div class="container">
-      <h2>📋 Las 8 conclusiones en lenguaje sencillo</h2>
-      <div class="conclusion-lista">
-        <div class="conclusion-item">
-          <span class="num">1</span>
-          <div><strong>122 publicaciones verificadas.</strong> Se descartaron 46 de otros municipios y 8 que no se pudieron confirmar.</div>
-        </div>
-        <div class="conclusion-item">
-          <span class="num">2</span>
-          <div><strong>El mercado está en dólares.</strong> 86.9% de los precios publicados están en USD. Quien solo tiene pesos cubanos encuentra muy poco.</div>
-        </div>
-        <div class="conclusion-item">
-          <span class="num">3</span>
-          <div><strong>El precio típico es menor que el promedio.</strong> La mediana es $21,000 USD, pero el promedio sube a $26,357 por algunas propiedades muy caras.</div>
-        </div>
-        <div class="conclusion-item">
-          <span class="num">4</span>
-          <div><strong>El alquiler no tiene precio estimable.</strong> Solo 3 anuncios de alquiler, 1 con precio y ninguno en dólares.</div>
-        </div>
-        <div class="conclusion-item">
-          <span class="num">5</span>
-          <div><strong>Desigualdad entre barrios.</strong> Cuatro zonas concentran la mayoría de la oferta. Como hay pocos anuncios por barrio, las comparaciones son solo orientativas.</div>
-        </div>
-        <div class="conclusion-item">
-          <span class="num">6</span>
-          <div><strong>Mucha información falta.</strong> 25.4% no dice la zona, 12.3% no dice el precio y 4.9% no dice ninguna de las dos.</div>
-        </div>
-        <div class="conclusion-item">
-          <span class="num">7</span>
-          <div><strong>La informalidad existe pero no domina.</strong> 9.8% usa palabras como "oportunidad" o "permuta", casi todo en Revolico.</div>
-        </div>
-        <div class="conclusion-item">
-          <span class="num">8</span>
-          <div><strong>El apartamento es más accesible.</strong> Su precio medio es unos $18,182 USD, muy por debajo de la casa ($42,842 USD).</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <p>Proyecto de Ciencia de Datos — Universidad de La Habana (MATCOM)</p>
-      <p>Profesor: Yudivian Almeida Cruz</p>
-      <p><a href="https://github.com/lcdie/Mercado-digital-cubano-en-10-de-octubre" target="_blank">Ver repositorio original en GitHub ➜</a></p>
-      <p class="pequeno">Esta página web es independiente y no modifica el repositorio del proyecto.</p>
+    <div class="container footer-bottom">
+      <p>Hecho para explicar, no para reemplazar el informe. Esta página no modifica el repositorio original.</p>
+      <button class="back-top" id="backTop" type="button" aria-label="Volver arriba">↑</button>
     </div>
   </footer>
 
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lightboxTitle" hidden>
+    <div class="lightbox-bar">
+      <p id="lightboxTitle">Gráfica original</p>
+      <div class="lightbox-actions">
+        <button type="button" id="zoomOut" aria-label="Alejar">−</button>
+        <button type="button" id="zoomIn" aria-label="Acercar">+</button>
+        <button type="button" id="zoomReset" aria-label="Restablecer zoom">↺</button>
+        <button type="button" id="lightboxClose" aria-label="Cerrar">✕</button>
+      </div>
+    </div>
+    <div class="lightbox-stage" id="lightboxStage">
+      <img id="lightboxImg" src="" alt="">
+    </div>
+    <div class="lightbox-foot">
+      <p id="lightboxCaption"></p>
+      <div class="lightbox-nav">
+        <button type="button" id="prevImage" aria-label="Imagen anterior">←</button>
+        <button type="button" id="nextImage" aria-label="Imagen siguiente">→</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <noscript>
+    <div class="noscript">Esta web usa JavaScript para las gráficas interactivas. Puedes ver las imágenes originales en la sección «Anexo visual» y descargar el informe en PDF.</div>
+  </noscript>
+
+  <script src="vendor/chart.umd.min.js"></script>
+  <script src="vendor/hammer.min.js"></script>
+  <script src="vendor/chartjs-plugin-zoom.min.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
