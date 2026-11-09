@@ -13,13 +13,13 @@ Difundir la web sin gastar dinero, usando únicamente canales gratuitos y el efe
 
 ## Canales gratuitos
 
-| Canal | Qué hacer |
-|-------|-----------|
-| **WhatsApp** | Enviar el enlace a contactos, grupos de vecinos y grupos de compraventa de La Habana. Colocar en el Estado de WhatsApp. |
-| **Facebook** | Publicar en grupos de Diez de Octubre, grupos de alquiler/venta de vivienda y en el perfil personal. No pagar "impulsar publicación". |
-| **Revolico** | Comentar en hilos relacionados con precios de vivienda en Diez de Octubre, aportando un dato del informe + el enlace (sin spam). |
-| **Telegram** | Compartir en canales y grupos de La Habana, inmuebles y MATCOM/UH. |
-| **Boca a boca** | Enviar a profesores, compañeros y conocidos que trabajen en vivienda o urbanismo. |
+| Canal | Qué hago yo |
+|-------|-------------|
+| **WhatsApp** | Envío el enlace a mis contactos, grupos de vecinos y grupos de compraventa de La Habana. Lo pongo en mi Estado de WhatsApp. |
+| **Facebook** | Publico en grupos de Diez de Octubre, grupos de alquiler/venta de vivienda y en mi perfil personal. No pago "impulsar publicación". |
+| **Revolico** | Comento en hilos relacionados con precios de vivienda en Diez de Octubre, aportando un dato del informe + el enlace (sin spam). |
+| **Telegram** | Comparto en canales y grupos de La Habana, inmuebles y MATCOM/UH. |
+| **Boca a boca** | Envío a profesores, compañeros y conocidos que trabajen en vivienda o urbanismo. |
 
 ## Contenido listo para copiar y pegar
 
@@ -34,11 +34,11 @@ Difundir la web sin gastar dinero, usando únicamente canales gratuitos y el efe
 - "Solo el 67,2% de los avisos dice precio y zona al mismo tiempo" → invita a la Gráfica 5.
 - "El único precio en CUP es un alquiler de 50.000" → dato curioso de la Gráfica 4.
 
-## Cómo medir si funciona (sin herramientas de pago)
+## Cómo mido si funciona (sin herramientas de pago)
 
-- Cuántas personas te dicen que vieron la web por WhatsApp o Facebook.
-- Si recibes preguntas sobre precios de barrios específicos (señal de que entraron a las gráficas).
-- Si alguien te pide el enlace para reenviarlo.
+- Cuántas personas me dicen que vieron la web por WhatsApp o Facebook.
+- Si recibo preguntas sobre precios de barrios específicos (señal de que entraron a las gráficas).
+- Si alguien me pide el enlace para reenviarlo.
 
 ---
 
