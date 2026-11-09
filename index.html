@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none';">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https://www.google-analytics.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; script-src 'self' https://www.googletagmanager.com; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://www.googletagmanager.com; object-src 'none'; base-uri 'self'; form-action 'none';">
   <meta name="description" content="Explicación sencilla e interactiva del mercado inmobiliario digital en Diez de Octubre: 122 anuncios verificados de Revolico y Facebook, precios en dólares, barrios, opacidad y límites del estudio.">
   <meta name="theme-color" content="#0b3d5c">
   <meta name="color-scheme" content="light">
@@ -16,15 +16,13 @@
   <title>Mercado inmobiliario digital en Diez de Octubre | 122 anuncios explicados</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css">
-</head>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-FVSRM44HLC"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-FVSRM44HLC');
-</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FVSRM44HLC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-FVSRM44HLC');
+  </script>
 <body>
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
   <div class="reading-progress" id="readingProgress" aria-hidden="true"></div>
@@ -980,7 +978,7 @@
     <div class="container footer-grid">
       <div>
         <p class="footer-brand">Mercado <strong>10 de Octubre</strong></p>
-        <p>Una web independiente para explicar el proyecto de Ciencia de Datos de MATCOM, Universidad de La Habana.</p>
+        <p>Una web independiente que hice yo mismo para explicar mi proyecto de Ciencia de Datos de MATCOM, Universidad de La Habana. La investigación y el análisis los realicé como estudiante, usando anuncios públicos de Revolico y Facebook.</p>
       </div>
       <div>
         <h3>Datos</h3>

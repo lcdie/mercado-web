@@ -765,6 +765,11 @@
           panel.classList.toggle('is-active', active);
         });
 
+        // Evento GA: cambio de pestaña Interactiva / Original
+        const tipo = tab.endsWith('-int') ? 'interactiva' : 'original';
+        const num = tab.replace(/^panel-g|-int|-orig$/g, '');
+        gaEvent('cambiar_pestana', 'Gráfica ' + num, tipo);
+
         if (tab.endsWith('-int')) {
           const chartId = chartsPorPanel['panel-' + tab] || null;
           requestAnimationFrame(() => {
@@ -782,6 +787,17 @@
   /* ---------------------------------------------------------
      CONTROLES DE LAS GRÁFICAS
      --------------------------------------------------------- */
+  // Eventos de Google Analytics para medir interacciones
+  function gaEvent(action, category, label, value) {
+    if (typeof gtag === 'function') {
+      gtag('event', action, {
+        event_category: category,
+        event_label: label,
+        value: value || undefined
+      });
+    }
+  }
+
   function initControls() {
     // Grupos de botones (chips)
     document.querySelectorAll('.control-group').forEach((group) => {
@@ -793,11 +809,26 @@
             c.setAttribute('aria-pressed', c === chip ? 'true' : 'false');
           });
 
-          if (chip.dataset.g1Mode) modoGrafica1(chip.dataset.g1Mode);
-          if (chip.dataset.g2Mode) modoGrafica2(chip.dataset.g2Mode);
-          if (chip.dataset.g3Mode) modoGrafica3(chip.dataset.g3Mode);
-          if (chip.dataset.g4Mode) modoGrafica4(chip.dataset.g4Mode);
-          if (chip.dataset.g5Mode) modoGrafica5(chip.dataset.g5Mode);
+          if (chip.dataset.g1Mode) {
+            modoGrafica1(chip.dataset.g1Mode);
+            gaEvent('filtro_grafica', 'Gráfica 1', chip.dataset.g1Mode);
+          }
+          if (chip.dataset.g2Mode) {
+            modoGrafica2(chip.dataset.g2Mode);
+            gaEvent('filtro_grafica', 'Gráfica 2', chip.dataset.g2Mode);
+          }
+          if (chip.dataset.g3Mode) {
+            modoGrafica3(chip.dataset.g3Mode);
+            gaEvent('filtro_grafica', 'Gráfica 3', chip.dataset.g3Mode);
+          }
+          if (chip.dataset.g4Mode) {
+            modoGrafica4(chip.dataset.g4Mode);
+            gaEvent('filtro_grafica', 'Gráfica 4', chip.dataset.g4Mode);
+          }
+          if (chip.dataset.g5Mode) {
+            modoGrafica5(chip.dataset.g5Mode);
+            gaEvent('filtro_grafica', 'Gráfica 5', chip.dataset.g5Mode);
+          }
         });
       });
     });
@@ -810,6 +841,7 @@
           chart.resetZoom();
           chart.update();
           toast('Zoom restablecido');
+          gaEvent('restablecer_zoom', 'Gráfica', btn.dataset.reset);
         }
       });
     });
@@ -989,6 +1021,7 @@
     const text = '122 anuncios verificados, 86,9% en USD y mediana de $21.000. Mira las 5 gráficas interactivas:';
 
     const share = async () => {
+      gaEvent('compartir', 'Web', url);
       if (navigator.share) {
         try {
           await navigator.share({ title, text, url });
@@ -1062,6 +1095,7 @@
     };
 
     const open = (i) => {
+      gaEvent('abrir_lightbox', 'Gráfica original', source.dataset.title || 'Gráfica original');
       index = (i + images.length) % images.length;
       const source = images[index];
       const figure = source.closest('figure');
