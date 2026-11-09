@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#0f4c81">
+  <title>Mercado Inmobiliario Digital — Diez de Octubre</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Barra superior fija (móvil) -->
+  <nav class="navbar">
+    <div class="navbar-brand">🏠 10 de Octubre</div>
+    <a href="#graficas" class="navbar-btn">Gráficas</a>
+  </nav>
+
+  <!-- Header -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Mercado Inmobiliario Digital<br>en Diez de Octubre</h1>
+      <p class="subtitle">Universidad de La Habana (MATCOM)<br>
+      122 publicaciones verificadas · 30 preguntas · Datos reales</p>
+      <a href="#graficas" class="btn btn-primary">Ver las gráficas interactivas ➜</a>
+      <div class="share-mobile" id="share-mobile">
+        <button id="btn-share" class="share-btn">Compartir en WhatsApp</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Botón volver arriba (móvil) -->
+  <button id="btn-top" class="btn-top">↑</button>
+
+  <!-- Introducción -->
+  <section id="inicio" class="intro">
+    <div class="container">
+      <h2>¿De qué trata este proyecto?</h2>
+      <p>Estudiantes analizaron <strong>anuncios de venta y alquiler</strong> publicados en <strong>Revolico y Facebook</strong> del municipio Diez de Octubre, La Habana.</p>
+      <p>Revisaron cada anuncio para confirmar que realmente estaba en el municipio, y respondieron <strong>30 preguntas</strong> sobre precios, zonas, dólares, alquileres y falta de información.</p>
+
+      <div class="numeros">
+        <div class="numero-card">
+          <span class="gran">122</span>
+          <span class="pequeno">publicaciones confirmadas dentro del municipio</span>
+        </div>
+        <div class="numero-card">
+          <span class="gran">86.9%</span>
+          <span class="pequeno">de los precios se declaran en dólares (USD)</span>
+        </div>
+        <div class="numero-card">
+          <span class="gran">$21,000</span>
+          <span class="pequeno">mediana de precio de compra (USD)</span>
+        </div>
+        <div class="numero-card">
+          <span class="gran">55</span>
+          <span class="pequeno">anuncios descartados con motivo registrado</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gráficas interactivas -->
+  <section id="graficas" class="graficas">
+    <div class="container">
+      <h2>📊 ¿Qué dicen los datos?</h2>
+      <p class="sub">Toca las gráficas, mueve el slider y explora. Cada una tiene su explicación debajo.</p>
+
+      <!-- Gráfica 1 -->
+      <div class="grafica-card">
+        <div class="grafica-titulo">1. Precios de venta en dólares (USD)</div>
+        <div class="grafica-controles">
+          <button class="btn-filtro activo" data-target="g1" data-filtro="todos">Todos</button>
+          <button class="btn-filtro" data-target="g1" data-filtro="rango">Rango P10-P90</button>
+        </div>
+        <canvas id="graf1"></canvas>
+        <div class="explicacion">
+          <strong>¿Qué muestra?</strong> Los precios de compra que piden los vendedores en dólares.<br>
+          <strong>¿Qué significa?</strong> La mayoría se pide entre <strong>$6,100 y $60,000 USD</strong>. La mitad de las ventas queda por debajo de <strong>$21,000 USD</strong>, pero el promedio sube a unos $26,357 porque hay algunas muy caras.
+        </div>
+      </div>
+
+      <!-- Gráfica 2 -->
+      <div class="grafica-card">
+        <div class="grafica-titulo">2. Oferta por zona (barrios)</div>
+        <div class="grafica-controles">
+          <button class="btn-filtro activo" data-target="g2" data-filtro="todos">Todos</button>
+          <button class="btn-filtro" data-target="g2" data-filtro="top4">Solo los 4 principales</button>
+        </div>
+        <canvas id="graf2"></canvas>
+        <div class="explicacion">
+          <strong>¿Qué muestra?</strong> En qué barrios se publican más anuncios.<br>
+          <strong>¿Qué significa?</strong> Cuatro barrios concentran casi todo: <strong>Santos Suárez, Lawton, La Víbora y El Sevillano</strong>. Juntos reúnen alrededor del 76% de los anuncios con zona identificada.
+        </div>
+      </div>
+
+      <!-- Gráfica 3 -->
+      <div class="grafica-card">
+        <div class="grafica-titulo">3. Media vs Mediana por zona (USD)</div>
+        <div class="grafica-controles">
+          <button class="btn-filtro activo" data-target="g3" data-metrica="media">Ver Medias</button>
+          <button class="btn-filtro" data-target="g3" data-metrica="mediana">Ver Medianas</button>
+        </div>
+        <canvas id="graf3"></canvas>
+        <div class="explicacion">
+          <strong>¿Qué muestra?</strong> Compara el precio promedio (media) con el precio típico (mediana) por barrio.<br>
+          <strong>¿Qué significa?</strong> La mediana es más confiable porque no se deja engañar por anuncios muy caros. Fíjate más en la mediana de tu barrio.
+        </div>
+      </div>
+
+      <!-- Gráfica 4 -->
+      <div class="grafica-card">
+        <div class="grafica-titulo">4. ¿En qué moneda se publican los precios?</div>
+        <canvas id="graf4"></canvas>
+        <div class="explicacion">
+          <strong>¿Qué muestra?</strong> Si los anunciantes declaran el precio en dólares (USD) o en pesos cubanos (CUP).<br>
+          <strong>¿Qué significa?</strong> Casi todo el mercado publicado está en dólares: <strong>99.1%</strong> de los anuncios que declaran moneda usan USD. Solo un anuncio usa CUP.
+        </div>
+      </div>
+
+      <!-- Gráfica 5 -->
+      <div class="grafica-card">
+        <div class="grafica-titulo">5. Falta de información (opacidad)</div>
+        <canvas id="graf5"></canvas>
+        <div class="explicacion">
+          <strong>¿Qué muestra?</strong> Cuántos anuncios tienen precio, cuántos tienen zona, y cuántos no tienen ni una cosa ni la otra.<br>
+          <strong>¿Qué significa?</strong> Solo <strong>67.2%</strong> de los anuncios permiten saber a la vez cuánto cuesta y dónde está. Un <strong>4.9%</strong> no dice ni el precio ni la zona.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Conclusiones -->
+  <section class="conclusiones">
+    <div class="container">
+      <h2>📋 Las 8 conclusiones en lenguaje sencillo</h2>
+      <div class="conclusion-lista">
+        <div class="conclusion-item">
+          <span class="num">1</span>
+          <div><strong>122 publicaciones verificadas.</strong> Se descartaron 46 de otros municipios y 8 que no se pudieron confirmar.</div>
+        </div>
+        <div class="conclusion-item">
+          <span class="num">2</span>
+          <div><strong>El mercado está en dólares.</strong> 86.9% de los precios publicados están en USD. Quien solo tiene pesos cubanos encuentra muy poco.</div>
+        </div>
+        <div class="conclusion-item">
+          <span class="num">3</span>
+          <div><strong>El precio típico es menor que el promedio.</strong> La mediana es $21,000 USD, pero el promedio sube a $26,357 por algunas propiedades muy caras.</div>
+        </div>
+        <div class="conclusion-item">
+          <span class="num">4</span>
+          <div><strong>El alquiler no tiene precio estimable.</strong> Solo 3 anuncios de alquiler, 1 con precio y ninguno en dólares.</div>
+        </div>
+        <div class="conclusion-item">
+          <span class="num">5</span>
+          <div><strong>Desigualdad entre barrios.</strong> Cuatro zonas concentran la mayoría de la oferta. Como hay pocos anuncios por barrio, las comparaciones son solo orientativas.</div>
+        </div>
+        <div class="conclusion-item">
+          <span class="num">6</span>
+          <div><strong>Mucha información falta.</strong> 25.4% no dice la zona, 12.3% no dice el precio y 4.9% no dice ninguna de las dos.</div>
+        </div>
+        <div class="conclusion-item">
+          <span class="num">7</span>
+          <div><strong>La informalidad existe pero no domina.</strong> 9.8% usa palabras como "oportunidad" o "permuta", casi todo en Revolico.</div>
+        </div>
+        <div class="conclusion-item">
+          <span class="num">8</span>
+          <div><strong>El apartamento es más accesible.</strong> Su precio medio es unos $18,182 USD, muy por debajo de la casa ($42,842 USD).</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>Proyecto de Ciencia de Datos — Universidad de La Habana (MATCOM)</p>
+      <p>Profesor: Yudivian Almeida Cruz</p>
+      <p><a href="https://github.com/lcdie/Mercado-digital-cubano-en-10-de-octubre" target="_blank">Ver repositorio original en GitHub ➜</a></p>
+      <p class="pequeno">Esta página web es independiente y no modifica el repositorio del proyecto.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

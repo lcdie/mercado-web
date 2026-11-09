@@ -1,0 +1,401 @@
+/* ========================================
+   Mercado Inmobiliario Digital — Diez de Octubre
+   Web independiente y optimizada para móvil
+   ======================================== */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #f5f7fa;
+  color: #1f2937;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Navbar fija */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(15, 76, 129, 0.95);
+  backdrop-filter: blur(8px);
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.navbar-brand {
+  color: white;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-decoration: none;
+}
+
+.navbar-btn {
+  background: #e8a33d;
+  color: #1f2937;
+  padding: 8px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* Hero */
+.hero {
+  background: linear-gradient(135deg, #0f4c81 0%, #1e6f9e 100%);
+  color: white;
+  padding: 70px 16px 40px 16px;
+  text-align: center;
+  border-bottom: 4px solid #e8a33d;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  margin-bottom: 12px;
+  line-height: 1.25;
+}
+
+.subtitle {
+  font-size: 1rem;
+  opacity: 0.95;
+  max-width: 600px;
+  margin: 0 auto 20px auto;
+  line-height: 1.5;
+}
+
+.btn-primary {
+  display: inline-block;
+  background: #e8a33d;
+  color: #1f2937;
+  padding: 14px 30px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+  margin-bottom: 15px;
+}
+
+.btn-primary:active {
+  transform: scale(0.96);
+}
+
+/* Compartir en móvil */
+.share-mobile {
+  margin-top: 12px;
+}
+
+.share-btn {
+  background: #25d366;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.35);
+}
+
+.share-btn:active {
+  transform: scale(0.96);
+}
+
+/* Ocultar compartir en escritorio si no hay Web Share API */
+.share-btn.oculto {
+  display: none;
+}
+
+/* Intro */
+.intro {
+  padding: 50px 16px;
+  background: #ffffff;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 12px;
+}
+
+.intro h2 {
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+  color: #0f4c81;
+}
+
+.intro p {
+  margin-bottom: 16px;
+  font-size: 1rem;
+  color: #374151;
+}
+
+.numeros {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.numero-card {
+  background: #f0f4f8;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  border-left: 4px solid #1e6f9e;
+}
+
+.numero-card .gran {
+  display: block;
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #0f4c81;
+}
+
+.numero-card .pequeno {
+  display: block;
+  font-size: 0.8rem;
+  color: #4b5563;
+  margin-top: 5px;
+  line-height: 1.3;
+}
+
+/* Gráficas */
+.graficas {
+  padding: 40px 16px;
+  background: #f5f7fa;
+}
+
+.graficas h2 {
+  text-align: center;
+  font-size: 1.6rem;
+  margin-bottom: 8px;
+  color: #0f4c81;
+}
+
+.graficas .sub {
+  text-align: center;
+  color: #4b5563;
+  margin-bottom: 28px;
+  font-size: 0.95rem;
+}
+
+.grafica-card {
+  background: white;
+  border-radius: 14px;
+  padding: 22px;
+  margin-bottom: 26px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  border: 1px solid #e5e7eb;
+}
+
+.grafica-titulo {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #0f4c81;
+  margin-bottom: 12px;
+}
+
+.grafica-controles {
+  margin-bottom: 14px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.btn-filtro {
+  padding: 7px 16px;
+  border: 1px solid #d1d5db;
+  background: white;
+  border-radius: 22px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.2s;
+}
+
+.btn-filtro:hover {
+  border-color: #1e6f9e;
+  color: #1e6f9e;
+}
+
+.btn-filtro:active {
+  transform: scale(0.97);
+}
+
+.btn-filtro.activo {
+  background: #1e6f9e;
+  color: white;
+  border-color: #1e6f9e;
+}
+
+canvas {
+  max-width: 100%;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 8px;
+}
+
+.explicacion {
+  margin-top: 16px;
+  padding: 16px;
+  background: #f8fafc;
+  border-radius: 10px;
+  border-left: 4px solid #e8a33d;
+  font-size: 0.95rem;
+}
+
+.explicacion strong {
+  color: #0f4c81;
+}
+
+/* Conclusiones */
+.conclusiones {
+  padding: 40px 16px;
+  background: #ffffff;
+}
+
+.conclusiones h2 {
+  text-align: center;
+  font-size: 1.6rem;
+  margin-bottom: 24px;
+  color: #0f4c81;
+}
+
+.conclusion-lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.conclusion-item {
+  background: #f0f4f8;
+  padding: 18px;
+  border-radius: 12px;
+  position: relative;
+}
+
+.conclusion-item .num {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  background: #e8a33d;
+  color: white;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+.conclusion-item div {
+  font-size: 0.92rem;
+  color: #374151;
+  line-height: 1.4;
+}
+
+/* Botón volver arriba */
+.btn-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #0f4c81;
+  color: white;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+  z-index: 900;
+}
+
+.btn-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.btn-top:active {
+  transform: scale(0.92);
+}
+
+/* Footer */
+footer {
+  background: #1f2937;
+  color: white;
+  padding: 40px 16px;
+  text-align: center;
+}
+
+footer p {
+  margin: 8px 0;
+  opacity: 0.9;
+  font-size: 0.95rem;
+}
+
+footer a {
+  color: #e8a33d;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+.pequeno {
+  margin-top: 14px;
+  font-size: 0.75rem;
+  opacity: 0.5;
+}
+
+/* Responsive móvil */
+@media (max-width: 640px) {
+  .hero h1 {
+    font-size: 1.7rem;
+  }
+  .subtitle {
+    font-size: 0.95rem;
+  }
+  .graficas h2, .conclusiones h2, .intro h2 {
+    font-size: 1.4rem;
+  }
+  .grafica-card {
+    padding: 18px;
+  }
+  .btn-filtro {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+  .numero-card .gran {
+    font-size: 1.6rem;
+  }
+}
+
+/* Prevenir zoom doble en móvil */
+input, button, select, textarea {
+  font-size: 16px;
+}
