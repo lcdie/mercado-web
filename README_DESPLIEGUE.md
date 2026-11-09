@@ -1,92 +1,45 @@
-# Cómo publicar esta web
+# Mercado inmobiliario digital en Diez de Octubre
 
-Esta carpeta es un sitio **estático** independiente del repositorio del proyecto.
-No necesita build, servidor Node ni base de datos: solo HTML, CSS, JS e imágenes.
+**Web:** https://lcdie.github.io/mercado-web/
 
-## Contenido
+Sitio independiente y gratuito que explica el proyecto con 5 gráficas interactivas sobre 122 anuncios verificados de Revolico y Facebook. Accesible desde cualquier móvil.
 
-```
-index.html                  Página principal
-style.css                   Estilos y diseño responsive
-app.js                      Gráficas interactivas y controles
-favicon.svg                 Icono del sitio
-img/                        Las 5 gráficas originales del repositorio
-vendor/chart.umd.min.js     Chart.js 4.4.7 (local, sin CDN)
-vendor/hammer.min.js        Soporte táctil para Chart.js
-vendor/chartjs-plugin-zoom.min.js  Zoom y arrastre de gráficas
-README_DESPLIEGUE.md        Este archivo
-```
+---
 
-Las librerías están incluidas en `vendor/`, así que la web funciona sin depender
-de un CDN y no se rompe si el visitante tiene bloqueadores de terceros.
+# Plan de campaña publicitaria — Costo cero ($0)
 
-## Publicación — GitHub Pages (enlace público)
+## Objetivo
+Difundir la web sin gastar dinero, usando únicamente canales gratuitos y el efecto multiplicador de WhatsApp, Facebook y Telegram.
 
-El repositorio de esta web es `lcdie/mercado-web`. El remoto ya está configurado
-por SSH:
+## Canales gratuitos
 
-```bash
-git remote -v
-# origin  git@github.com:lcdie/mercado-web.git (fetch)
-# origin  git@github.com:lcdie/mercado-web.git (push)
-```
+| Canal | Qué hacer |
+|-------|-----------|
+| **WhatsApp** | Enviar el enlace a contactos, grupos de vecinos y grupos de compraventa de La Habana. Colocar en el Estado de WhatsApp. |
+| **Facebook** | Publicar en grupos de Diez de Octubre, grupos de alquiler/venta de vivienda y en el perfil personal. No pagar "impulsar publicación". |
+| **Revolico** | Comentar en hilos relacionados con precios de vivienda en Diez de Octubre, aportando un dato del informe + el enlace (sin spam). |
+| **Telegram** | Compartir en canales y grupos de La Habana, inmuebles y MATCOM/UH. |
+| **Boca a boca** | Enviar a profesores, compañeros y conocidos que trabajen en vivienda o urbanismo. |
 
-Si por alguna razón apareciera un remoto HTTPS (`https://github.com/...`), se
-cambia a SSH con:
+## Contenido listo para copiar y pegar
 
-```bash
-git remote set-url origin git@github.com:lcdie/mercado-web.git
-```
+**WhatsApp / Estado:**
+> ¿Cuánto cuesta comprar en Diez de Octubre? 122 anuncios reales explicados con 5 gráficas interactivas. Mediana de venta: $21.000 USD. El 86,9% se publica en dólares. 📱 Abre desde el móvil: https://lcdie.github.io/mercado-web/
 
-Publicar los cambios (desde el clon de trabajo `mercado-web-clone/`):
+**Facebook (con imagen `img/grafico_2_oferta_por_zona.png`):**
+> Santos Suárez, Lawton, La Víbora y El Sevillano concentran el 75,8% de la oferta con zona en Diez de Octubre. Mirá los precios barrio por barrio en esta web gratuita, sin registros y apta para móvil: https://lcdie.github.io/mercado-web/
 
-```bash
-cd /tmp/opencode/mercado-web-clone
-git add .
-git commit -m "Web interactiva: datos verificados y mejoras móviles"
-git push -u origin main
-```
+**Hooks para generar curiosidad:**
+- "¿Por qué la media es $26.357 pero la mediana solo $21.000?" → invita a la Gráfica 1.
+- "Solo el 67,2% de los avisos dice precio y zona al mismo tiempo" → invita a la Gráfica 5.
+- "El único precio en CUP es un alquiler de 50.000" → dato curioso de la Gráfica 4.
 
-Luego, en GitHub:
+## Cómo medir si funciona (sin herramientas de pago)
 
-1. Abrir <https://github.com/lcdie/mercado-web/settings/pages>.
-2. En **Build and deployment → Source**, elegir **Deploy from a branch**.
-3. Rama: `main`; carpeta: `/ (root)`.
-4. Guardar y esperar 1–2 minutos.
+- Cuántas personas te dicen que vieron la web por WhatsApp o Facebook.
+- Si recibes preguntas sobre precios de barrios específicos (señal de que entraron a las gráficas).
+- Si alguien te pide el enlace para reenviarlo.
 
-La dirección pública queda:
+---
 
-**https://lcdie.github.io/mercado-web/**
-
-Se puede abrir desde cualquier teléfono y compartir con el botón «Compartir»
-(usa el menú nativo del móvil o copia el enlace).
-
-### Si GitHub pide usuario y contraseña
-
-Eso significa que el remoto sigue en HTTPS. Verificar con `git remote -v` y
-cambiarlo a SSH como se indicó arriba. La clave SSH debe estar cargada:
-
-```bash
-ssh -T git@github.com
-# Hola lcdie! Has authenticated successfully...
-```
-
-## Comprobaciones antes de publicar
-
-- [ ] Las 5 gráficas se dibujan y responden al pasar el mouse o tocar.
-- [ ] Las pestañas «Interactiva» / «Original del repo» cambian de vista.
-- [ ] Los botones de filtro (media/mediana, top-4, dona/barras) actualizan la gráfica.
-- [ ] El menú móvil abre y cierra.
-- [ ] El botón «Compartir» funciona o copia el enlace.
-- [ ] Las imágenes originales abren en el visor y se pueden ampliar.
-- [ ] No hay errores en la consola del navegador.
-
-## Nota sobre los datos
-
-Las gráficas interactivas usan las cifras del **informe final** (122
-publicaciones confirmadas). Las imágenes de `img/` son las que genera
-`graficos/generar_graficas.py` en el repositorio original y, por usar una
-clasificación algo distinta, muestran algunos `n` diferentes. Esa diferencia
-está explicada en la sección «Nota técnica» de la propia web.
-
-Esta web **no modifica** el repositorio del proyecto: solo enlaza a él.
+**Nota:** Esta web no modifica el repositorio original del proyecto; solo enlaza a él.
