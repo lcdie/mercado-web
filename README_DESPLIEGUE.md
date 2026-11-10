@@ -6,12 +6,12 @@ Sitio independiente y gratuito que explica el proyecto con 5 gráficas interacti
 
 ---
 
-# Plan de campaña publicitaria — Costo cero ($0)
+# Plan de campaña publicitaria
 
 ## Objetivo
-Difundir la web sin gastar dinero, usando únicamente canales gratuitos y el efecto multiplicador de WhatsApp, Facebook y Telegram.
+Difundir la web, usando únicamente canales gratuitos y el efecto multiplicador de WhatsApp, Facebook y Telegram.
 
-## Canales gratuitos
+## Canales
 
 | Canal | Qué hago yo |
 |-------|-------------|
@@ -21,25 +21,5 @@ Difundir la web sin gastar dinero, usando únicamente canales gratuitos y el efe
 | **Telegram** | Comparto en canales y grupos de La Habana, inmuebles y MATCOM/UH. |
 | **Boca a boca** | Envío a profesores, compañeros y conocidos que trabajen en vivienda o urbanismo. |
 
-## Contenido listo para copiar y pegar
-
-**WhatsApp / Estado:**
-> ¿Cuánto cuesta comprar en Diez de Octubre? 122 anuncios reales explicados con 5 gráficas interactivas. Mediana de venta: $21.000 USD. El 86,9% se publica en dólares. 📱 Abre desde el móvil: https://lcdie.github.io/mercado-web/
-
-**Facebook (con imagen `img/grafico_2_oferta_por_zona.png`):**
-> Santos Suárez, Lawton, La Víbora y El Sevillano concentran el 75,8% de la oferta con zona en Diez de Octubre. Mirá los precios barrio por barrio en esta web gratuita, sin registros y apta para móvil: https://lcdie.github.io/mercado-web/
-
-**Hooks para generar curiosidad:**
-- "¿Por qué la media es $26.357 pero la mediana solo $21.000?" → invita a la Gráfica 1.
-- "Solo el 67,2% de los avisos dice precio y zona al mismo tiempo" → invita a la Gráfica 5.
-- "El único precio en CUP es un alquiler de 50.000" → dato curioso de la Gráfica 4.
-
-## Cómo mido si funciona (sin herramientas de pago)
-
-- Cuántas personas me dicen que vieron la web por WhatsApp o Facebook.
-- Si recibo preguntas sobre precios de barrios específicos (señal de que entraron a las gráficas).
-- Si alguien me pide el enlace para reenviarlo.
-
----
 
 **Nota:** Esta web no modifica el repositorio original del proyecto; solo enlaza a él.
