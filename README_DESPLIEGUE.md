@@ -20,6 +20,3 @@ Difundir la web, usando únicamente canales gratuitos y el efecto multiplicador 
 | **Revolico** | Comento en hilos relacionados con precios de vivienda en Diez de Octubre, aportando un dato del informe + el enlace (sin spam). |
 | **Telegram** | Comparto en canales y grupos de La Habana, inmuebles y MATCOM/UH. |
 | **Boca a boca** | Envío a profesores, compañeros y conocidos que trabajen en vivienda o urbanismo. |
-
-
-**Nota:** Esta web no modifica el repositorio original del proyecto; solo enlaza a él.
